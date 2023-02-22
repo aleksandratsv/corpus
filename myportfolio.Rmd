@@ -10,8 +10,7 @@ output:
 library(flexdashboard)
 ```
 
-Column {data-width=650}
------------------------------------------------------------------------
+## Column {data-width="650"}
 
 ### Chart A
 
@@ -19,8 +18,7 @@ Column {data-width=650}
 
 ```
 
-Column {data-width=350}
------------------------------------------------------------------------
+## Column {data-width="350"}
 
 ### Chart B
 
@@ -33,4 +31,3 @@ Column {data-width=350}
 ```{r}
 
 ```
-
