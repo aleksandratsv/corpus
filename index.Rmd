@@ -1,30 +1,62 @@
 ---
-title: "Magic"
-author: "Aleksandra Tsvetanova"
-date: "2023-02-13"
-output: html_document
+title: "compmus"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+library(flexdashboard)
 ```
 
-## R Markdown
+Column {data-width=650}
+-----------------------------------------------------------------------
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+### Chart A
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+```{r}
+library(tidyverse)
+library(spotifyr)
+library(compmus)
 
-```{r cars}
-summary(cars)
+wood <-
+  get_tidy_audio_analysis("1Yk0cQdMLx5RzzFTYwmuld") |>
+  select(segments) |>
+  unnest(segments) |>
+  select(start, duration, pitches)
+
+wood |>
+  mutate(pitches = map(pitches, compmus_normalise, "euclidean")) |>
+  compmus_gather_chroma() |> 
+  ggplot(
+    aes(
+      x = start + duration / 2,
+      width = duration,
+      y = pitch_class,
+      fill = value
+    )
+  ) +
+  geom_tile() +
+  labs(x = "Time (s)", y = NULL, fill = "Magnitude") +
+  theme_minimal() +
+  scale_fill_viridis_c()  
+
+
 ```
 
-## Including Plots
+Column {data-width=350}
+-----------------------------------------------------------------------
 
-You can also embed plots, for example:
+### Chart B
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r}
+
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+### Chart C
+
+```{r}
+
+```
+
