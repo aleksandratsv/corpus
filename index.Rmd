@@ -1,5 +1,5 @@
 ---
-title: "compmus"
+title: "My Portfolio"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -10,53 +10,72 @@ output:
 library(flexdashboard)
 ```
 
-Column {data-width=650}
------------------------------------------------------------------------
+## Column {data-width="650"}
 
-### Chart A
+### Inspiration
+
+For my corpus, I decided to focus on learning more about Rihanna by analyzing her albums: **Music of the sun (2005), A Girl like me (2006), Good girl gone bad (2008), Rated R(2009), Loud(2010), Talk that talk (2012), Unapologetic (2012) and Anti(2016)**\
+I believe that, Rihanna's albums reflect her personal growth and experiences. From her early albums to her most recent releases, she has tackled themes such as love, heartbreak, and social issues. She is one of the most successful and influential pop stars of the past decade, and her music has resonated with millions of fans around the world.
+
+Apart from my great admiration towards her I believe that by delving deeper into Rihanna's albums, I would be able to gain a better understanding of her creative process, the themes and motifs that she explores, and the evolution of her sound over time. My plans consist of extracting each of her most famous songs per album according to themes: Love, Heartbreak and Power, with the help of the software tools that we are gonna implement. Furthermore I am hoping to learn more about the collaborations and production techniques that go into making a successful album and explore what makes her music so popular and groundbreaking, where I believe I would be able to gain a deeper appreciation for the emotional depth and honesty in her music. Additionally by analyzing Rihanna's albums, I believe I would be able to develop my own critical thinking skills and strengthen my ability to identify and articulate what makes a particular song or album great . I am eager to examine the lyrics, melody, rhythm, instrumentation, and production choices that contribute to the overall impact of her music.
 
 ```{r}
+
 library(tidyverse)
 library(spotifyr)
-library(compmus)
-
-wood <-
-  get_tidy_audio_analysis("1Yk0cQdMLx5RzzFTYwmuld") |>
-  select(segments) |>
-  unnest(segments) |>
-  select(start, duration, pitches)
-
-wood |>
-  mutate(pitches = map(pitches, compmus_normalise, "euclidean")) |>
-  compmus_gather_chroma() |> 
-  ggplot(
-    aes(
-      x = start + duration / 2,
-      width = duration,
-      y = pitch_class,
-      fill = value
-    )
-  ) +
-  geom_tile() +
-  labs(x = "Time (s)", y = NULL, fill = "Magnitude") +
-  theme_minimal() +
-  scale_fill_viridis_c()  
-
+album_ids <- c('4UlGauD7ROb3YbVOFMgW5u', '4FyGpObwABjn0o8Tdp7AZz', '5pvFhFt1nzE8sCbm1wjNRv','3JSWZWeTHF4HDGt5Eozdy7','4XBfFj0WYyh5mBtU61EdyY', '1Kw1bVd07oRqcjrcjQKC8T','7vN82vd1Vq44fjlhjfvHJp')
+albums <- get_albums(album_ids)
+album_names <- albums$name
+album_popularity <- albums$popularity
+album_data <- data.frame(album_names, album_popularity)
+library(ggplot2)
+ggplot(album_data, aes(x = album_names, y = album_popularity)) + 
+  geom_bar(stat = "identity", fill = "skyblue") + 
+  xlab("Album") + ylab("Popularity") + 
+  ggtitle("Popularity of all of Rihanna's albums from 2005 to 2016") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 ```
 
-Column {data-width=350}
------------------------------------------------------------------------
+## Albums of Rihanna {data-width="250"}
 
-### Chart B
+### 
 
 ```{r}
+library(spotifyr)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(ggpubr)
+
+# Get the album object for "Music of the Sun" by Rihanna
+mot_album <- get_album("4FyGpObwABjn0o8Tdp7AZz")
+
+# Get the tracks for the album
+mot_tracks <- get_album_tracks(mot_album$id)
+
+# Loop through each track and create a plot
+for (i in 1:nrow(mot_tracks)) {
+  # Get the audio features for the current track
+  track_audio_features <- get_track_audio_features(mot_tracks$id[i])
+  
+  # Convert the data to a long format
+  track_audio_features_long <- track_audio_features %>%
+    pivot_longer(cols = c(acousticness, danceability, energy, instrumentalness, liveness, loudness, speechiness, valence),
+                 names_to = "audio_feature",
+                 values_to = "value")
+  
+  # Create the plot for the current track
+  p <- ggplot(track_audio_features_long, aes(x = value, y = audio_feature)) +
+    geom_point(size = 2, color = "steelblue") +
+    theme_bw() +
+    labs(title = mot_tracks$name[i],
+         x = "Audio Feature Value",
+         y = "Audio Feature")
+  
+  # Print the plot
+  print(p)
+
+}
 
 ```
-
-### Chart C
-
-```{r}
-
-```
-
