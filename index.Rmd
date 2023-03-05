@@ -268,30 +268,26 @@ Verse 2 (1:33-2:05): The second verse is similar to the first verse, but with so
 Overall, the arrangement of "S&M" follows a standard pop song structure, with an intro, verses, pre-choruses, choruses, and a bridge. The song features variations, such as the repetition of the pre-chorus and the vocal ad-libs and harmonies in the choruses. The bridge adds to the dynamic and memorable quality of the song by providing a contrast to the chorus.
 
 ```{r}
-
-library(tidyverse)
-library(spotifyr)
-library(compmus)
-
 lao <-
-  get_tidy_audio_analysis("0C4ejWmOTMv8vuYj85mf8m") |> # Change URI.
-  compmus_align(bars, segments) |>                     # Change `bars`
-  select(bars) |>                                      #   in all three
-  unnest(bars) |>                                      #   of these lines.
+  get_tidy_audio_analysis("0C4ejWmOTMv8vuYj85mf8m") |> 
+  compmus_align(bars, segments) |>                    
+  select(bars) |>                                     
+  unnest(bars) |>                                     
   mutate(
     pitches =
       map(segments,
           compmus_summarise, pitches,
-          method = "rms", norm = "euclidean"              # Change summary & norm.
+          method = "rms", norm = "euclidean"             
       )
   ) |>
   mutate(
     timbre =
       map(segments,
           compmus_summarise, timbre,
-          method = "rms", norm = "euclidean"              # Change summary & norm.
+          method = "rms", norm = "euclidean"             
       )
   )
+
 
 lao |>
   compmus_gather_timbre() |>
@@ -324,6 +320,7 @@ lao |>
   coord_fixed() +
   scale_fill_viridis_c(guide = "none") +
   theme_classic() +
+  labs(x = "", y = "")
 ```
 
 We found love
