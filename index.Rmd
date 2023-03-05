@@ -8,21 +8,521 @@ output:
 
 ```{r setup, include=FALSE}
 library(flexdashboard)
+library(cowplot)
 ```
 
-# Motivation
+# Features
 
-## Column {data-width="350"}
+## Column {data-width="350"}Column {.tabset}
 
-### Inspiration
+Pon de Replay
+
+Features of Rihanna's Pon de Replay Intro (0:00-0:11): The song begins with a brief intro featuring a repeating synth melody and Rihanna's vocals. Verse 1 (0:11-0:33): The first verse begins with Rihanna's vocals over a sparse beat, building to a more intense chorus. Chorus 1 (0:33-0:56): The first chorus features Rihanna's catchy hook "Come Mr. DJ song pon de replay," over a driving beat. Verse 2 (0:56-1:17): The second verse features a similar structure to the first verse, building to the second chorus. Chorus 2 (1:17-1:41): The second chorus is a repeat of the first chorus. Bridge (1:41-2:02): The bridge provides a contrast to the chorus, featuring a different melody and lyrics Chorus 3 (2:02-2:26): The third chorus is a repeat of the first two choruses, with a few variations in the instrumentation. Outro (2:26-3:18): The song ends with a fade-out of the chorus, featuring Rihanna's vocals and a repeating synth melody.
+
+Overall, the arrangement of "Pon de Replay" follows a traditional pop song structure, with an intro, verses, chorus, bridge, and outro, with each section building on the previous one to create a dynamic and engaging song.
+
+```{r}
+library(tidyverse)
+library(spotifyr)
+library(compmus)
+
+bzt<-
+  get_tidy_audio_analysis("4TsmezEQVSZNNPv5RJ65Ov") |> # Change URI.
+  compmus_align(bars, segments) |>                     # Change `bars`
+  select(bars) |>                                      #   in all three
+  unnest(bars) |>                                      #   of these lines.
+  mutate(
+    pitches =
+      map(segments,
+          compmus_summarise, pitches,
+          method = "rms", norm = "euclidean"              # Change summary & norm.
+      )
+  ) |>
+  mutate(
+    timbre =
+      map(segments,
+          compmus_summarise, timbre,
+          method = "rms", norm = "euclidean"              # Change summary & norm.
+      )
+  )
+
+bzt |>
+  compmus_gather_timbre() |>
+  ggplot(
+    aes(
+      x = start + duration / 2,
+      width = duration,
+      y = basis,
+      fill = value
+    )
+  ) +
+  geom_tile() +
+  labs(x = "Time (s)", y = NULL, fill = "Magnitude") +
+  scale_fill_viridis_c() +                              
+  theme_classic()
+
+
+bzt |>
+  compmus_self_similarity(timbre, "cosine") |> 
+  ggplot(
+    aes(
+      x = xstart + xduration / 2,
+      width = xduration,
+      y = ystart + yduration / 2,
+      height = yduration,
+      fill = d
+    )
+  ) +
+  geom_tile() +
+  coord_fixed() +
+  scale_fill_viridis_c(guide = "none") +
+  theme_classic() +
+  labs(x = "", y = "")
+```
+
+Unfaithful
+
+Intro (0:00-0:19): The song begins with a slow and mournful piano melody, which sets the tone for the emotional lyrics that follow. Verse 1 (0:19-0:41): The first verse begins with Rihanna's vocals over a simple piano accompaniment, building to a more intense chorus. Chorus 1 (0:41-1:02): The first chorus features Rihanna's emotive vocals over a more layered and complex instrumental accompaniment. Verse 2 (1:02-1:24): The second verse features a similar structure to the first verse, building to the second chorus. Chorus 2 (1:24-1:45): The second chorus is a repeat of the first chorus, with slight variations in the instrumentation and vocal delivery. Bridge (1:45-2:06): The bridge provides a contrast to the chorus, featuring a different melody and lyrics, as Rihanna sings "I don't wanna be the reason why / Every time I walk out the door / I see him die a little more inside." Chorus 3 (2:06-2:27): The third chorus is a repeat of the first two choruses, with a few variations in the instrumentation. Outro (2:27-3:51): The song ends with a repetition of the intro's piano melody, with Rihanna's vocals fading out.
+
+Overall, the arrangement of "Unfaithful" follows a traditional pop ballad structure, with an intro, verses, choruses, and a bridge, with each section building on the previous one to create a dynamic and emotional song.\
+
+```{r}
+mpt <-
+  get_tidy_audio_analysis("13xxBnXOuiBxVxJI458B0i") |> # Change URI.
+  compmus_align(bars, segments) |>                     # Change `bars`
+  select(bars) |>                                      #   in all three
+  unnest(bars) |>                                      #   of these lines.
+  mutate(
+    pitches =
+      map(segments,
+          compmus_summarise, pitches,
+          method = "rms", norm = "euclidean"              # Change summary & norm.
+      )
+  ) |>
+  mutate(
+    timbre =
+      map(segments,
+          compmus_summarise, timbre,
+          method = "rms", norm = "euclidean"              # Change summary & norm.
+      )
+  )
+
+mpt |>
+  compmus_gather_timbre() |>
+  ggplot(
+    aes(
+      x = start + duration / 2,
+      width = duration,
+      y = basis,
+      fill = value
+    )
+  ) +
+  geom_tile() +
+  labs(x = "Time (s)", y = NULL, fill = "Magnitude") +
+  scale_fill_viridis_c() +                              
+  theme_classic()
+
+
+mpt |>
+  compmus_self_similarity(timbre, "cosine") |> 
+  ggplot(
+    aes(
+      x = xstart + xduration / 2,
+      width = xduration,
+      y = ystart + yduration / 2,
+      height = yduration,
+      fill = d
+    )
+  ) +
+  geom_tile() +
+  coord_fixed() +
+  scale_fill_viridis_c(guide = "none") +
+  theme_classic() +
+  labs(x = "", y = "")
+```
+
+Umbrella
+
+Intro (0:00-0:10): The song begins with a synth chord progression and a simple drum pattern. Verse 1 (0:10-0:43): The first verse features Rihanna's vocals over a sparse instrumental accompaniment, building to a pre-chorus. Pre-chorus (0:43-1:02): The pre-chorus begins with a slightly more intense instrumental accompaniment. Chorus 1 (1:02-1:32): The first chorus features a catchy and repetitive melody, with Rihanna's vocals over a layered and upbeat instrumental accompaniment. Verse 2 (1:32-2:06): The second verse is similar to the first verse, but with slight variations in the instrumentation and vocal delivery. Pre-chorus (2:06-2:25): The pre-chorus is repeated, leading into the second chorus. Chorus 2 (2:25-2:56): The second chorus is a repeat of the first chorus, but with some variations in the instrumentation and vocal ad-libs. Bridge (2:56-3:18): The bridge provides a contrast to the chorus, with a slower tempo and a different chord progression. Rihanna sings "You can run into my arms / It's okay, don't be alarmed / Come into me / There's no distance in between our love." Chorus 3 (3:18-3:49): The third chorus is a repeat of the first two choruses, with additional vocal ad-libs and harmonies. Outro (3:49-4:13): The song ends with a repetition of the chorus and an instrumental fade-out.
+
+```{r}
+llt <-
+  get_tidy_audio_analysis("49FYlytm3dAAraYgpoJZux") |> # Change URI.
+  compmus_align(bars, segments) |>                     # Change `bars`
+  select(bars) |>                                      #   in all three
+  unnest(bars) |>                                      #   of these lines.
+  mutate(
+    pitches =
+      map(segments,
+          compmus_summarise, pitches,
+          method = "rms", norm = "euclidean"              # Change summary & norm.
+      )
+  ) |>
+  mutate(
+    timbre =
+      map(segments,
+          compmus_summarise, timbre,
+          method = "rms", norm = "euclidean"              # Change summary & norm.
+      )
+  )
+
+llt |>
+  compmus_gather_timbre() |>
+  ggplot(
+    aes(
+      x = start + duration / 2,
+      width = duration,
+      y = basis,
+      fill = value
+    )
+  ) +
+  geom_tile() +
+  labs(x = "Time (s)", y = NULL, fill = "Magnitude") +
+  scale_fill_viridis_c() +                              
+  theme_classic()
+
+
+llt |>
+  compmus_self_similarity(timbre, "cosine") |> 
+  ggplot(
+    aes(
+      x = xstart + xduration / 2,
+      width = xduration,
+      y = ystart + yduration / 2,
+      height = yduration,
+      fill = d
+    )
+  ) +
+  geom_tile() +
+  coord_fixed() +
+  scale_fill_viridis_c(guide = "none") +
+  theme_classic() +
+  labs(x = "", y = "")
+```
+
+Rude boy
+
+Intro (0:00-0:11): The song starts with a drum loop, a synth riff, and Rihanna's vocals. Verse 1 (0:11-0:43): The first verse features Rihanna's vocals over a sparse instrumental accompaniment, building to a pre-chorus. Pre-chorus (0:43-0:59): Starts with a more intense instrumental accompaniment. Chorus 1 (0:59-1:30): The first chorus features a catchy and repetitive melody, with Rihanna's vocals over a layered and upbeat instrumental accompaniment. Verse 2 (1:30-2:03): The second verse is similar to the first verse, but with some variations in the instrumentation and vocal delivery. Pre-chorus (2:03-2:19): The pre-chorus is repeated, leading into the second chorus. Chorus 2 (2:19-2:50): The second chorus is a repeat of the first chorus, but with some variations in the instrumentation and vocal ad-libs. Bridge (2:50-3:12): The bridge provides a contrast to the chorus, with a slower tempo and a different chord progression. Rihanna sings "Come here rude boy, boy, can you get it up? / Come here rude boy, boy, is you big enough? / Take it, take it, baby, baby / Take it, take it, love me, love me." Chorus 3 (3:12-3:43): The third chorus is a repeat of the first two choruses, with additional vocal ad-libs and harmonies. Outro (3:43-3:57): The song ends with a repetition of the chorus and an instrumental fade-out.
+
+Overall, the song features variations, such as the repetition of the pre-chorus and the vocal ad-libs and harmonies in the choruses. The bridge adds to the dynamic and memorable quality of the song by providing a contrast to the chorus.
+
+```{r}
+jkt <-
+  get_tidy_audio_analysis("60jzFy6Nn4M0iD1d94oteF") |> # Change URI.
+  compmus_align(bars, segments) |>                     # Change `bars`
+  select(bars) |>                                      #   in all three
+  unnest(bars) |>                                      #   of these lines.
+  mutate(
+    pitches =
+      map(segments,
+          compmus_summarise, pitches,
+          method = "rms", norm = "euclidean"              # Change summary & norm.
+      )
+  ) |>
+  mutate(
+    timbre =
+      map(segments,
+          compmus_summarise, timbre,
+          method = "rms", norm = "euclidean"              # Change summary & norm.
+      )
+  )
+
+jkt |>
+  compmus_gather_timbre() |>
+  ggplot(
+    aes(
+      x = start + duration / 2,
+      width = duration,
+      y = basis,
+      fill = value
+    )
+  ) +
+  geom_tile() +
+  labs(x = "Time (s)", y = NULL, fill = "Magnitude") +
+  scale_fill_viridis_c() +                              
+  theme_classic()
+
+
+jkt |>
+  compmus_self_similarity(timbre, "cosine") |> 
+  ggplot(
+    aes(
+      x = xstart + xduration / 2,
+      width = xduration,
+      y = ystart + yduration / 2,
+      height = yduration,
+      fill = d
+    )
+  ) +
+  geom_tile() +
+  coord_fixed() +
+  scale_fill_viridis_c(guide = "none") +
+  theme_classic() +
+  labs(x = "", y = "")
+```
+
+S&M
+
+Verse 2 (1:33-2:05): The second verse is similar to the first verse, but with some variations in the instrumentation and vocal delivery. Pre-chorus (2:05-2:21): The pre-chorus is repeated, leading into the second chorus. Chorus 2 (2:21-2:51): The second chorus is a repeat of the first chorus, but with some variations in the instrumentation and vocal ad-libs. Bridge (2:51-3:23): The bridge provides a contrast to the chorus, with a slower tempo and a different chord progression. Chorus 3 (3:23-3:53): The third chorus is a repeat of the first two choruses, with additional vocal ad-libs and harmonies. Outro (3:53-4:16): The song ends with a repetition of the chorus and an instrumental fade-out.
+
+Overall, the arrangement of "S&M" follows a standard pop song structure, with an intro, verses, pre-choruses, choruses, and a bridge. The song features variations, such as the repetition of the pre-chorus and the vocal ad-libs and harmonies in the choruses. The bridge adds to the dynamic and memorable quality of the song by providing a contrast to the chorus.
+
+```{r}
+
+library(tidyverse)
+library(spotifyr)
+library(compmus)
+
+lao <-
+  get_tidy_audio_analysis("0C4ejWmOTMv8vuYj85mf8m") |> # Change URI.
+  compmus_align(bars, segments) |>                     # Change `bars`
+  select(bars) |>                                      #   in all three
+  unnest(bars) |>                                      #   of these lines.
+  mutate(
+    pitches =
+      map(segments,
+          compmus_summarise, pitches,
+          method = "rms", norm = "euclidean"              # Change summary & norm.
+      )
+  ) |>
+  mutate(
+    timbre =
+      map(segments,
+          compmus_summarise, timbre,
+          method = "rms", norm = "euclidean"              # Change summary & norm.
+      )
+  )
+
+lao |>
+  compmus_gather_timbre() |>
+  ggplot(
+    aes(
+      x = start + duration / 2,
+      width = duration,
+      y = basis,
+      fill = value
+    )
+  ) +
+  geom_tile() +
+  labs(x = "Time (s)", y = NULL, fill = "Magnitude") +
+  scale_fill_viridis_c() +                              
+  theme_classic()
+
+
+lao |>
+  compmus_self_similarity(timbre, "cosine") |> 
+  ggplot(
+    aes(
+      x = xstart + xduration / 2,
+      width = xduration,
+      y = ystart + yduration / 2,
+      height = yduration,
+      fill = d
+    )
+  ) +
+  geom_tile() +
+  coord_fixed() +
+  scale_fill_viridis_c(guide = "none") +
+  theme_classic() +
+```
+
+We found love
+
+```{r}
+bzt<-
+  get_tidy_audio_analysis("0U10zFw4GlBacOy9VDGfGL") |> # Change URI.
+  compmus_align(bars, segments) |>                     # Change `bars`
+  select(bars) |>                                      #   in all three
+  unnest(bars) |>                                      #   of these lines.
+  mutate(
+    pitches =
+      map(segments,
+          compmus_summarise, pitches,
+          method = "rms", norm = "euclidean"              # Change summary & norm.
+      )
+  ) |>
+  mutate(
+    timbre =
+      map(segments,
+          compmus_summarise, timbre,
+          method = "rms", norm = "euclidean"              # Change summary & norm.
+      )
+  )
+
+bzt |>
+  compmus_gather_timbre() |>
+  ggplot(
+    aes(
+      x = start + duration / 2,
+      width = duration,
+      y = basis,
+      fill = value
+    )
+  ) +
+  geom_tile() +
+  labs(x = "Time (s)", y = NULL, fill = "Magnitude") +
+  scale_fill_viridis_c() +                              
+  theme_classic()
+
+
+bzt |>
+  compmus_self_similarity(timbre, "cosine") |> 
+  ggplot(
+    aes(
+      x = xstart + xduration / 2,
+      width = xduration,
+      y = ystart + yduration / 2,
+      height = yduration,
+      fill = d
+    )
+  ) +
+  geom_tile() +
+  coord_fixed() +
+  scale_fill_viridis_c(guide = "none") +
+  theme_classic() +
+  labs(x = "", y = "")
+
+```
+
+Intro (0:00-0:04): The song starts with a repetitive synth riff and Rihanna's vocals. Verse 1 (0:04-0:35): The first verse features Rihanna's vocals over instrumental accompaniment, building to a pre-chorus. Pre-chorus (0:35-0:49): The pre-chorus is a short section that serves as a transition from the verse to the chorus, with a more intense instrumental accompaniment. Chorus 1 (0:49-1:19): The first chorus features a catchy and repetitive melody, with Rihanna's vocals over a layered and upbeat instrumental accompaniment. Verse 2 (1:19-1:50): The second verse is similar to the first verse, but with some variations in the instrumentation and vocal delivery. Pre-chorus (1:50-2:04): The pre-chorus is repeated, leading into the second chorus. Chorus 2 (2:04-2:34): The second chorus is a repeat of the first chorus, but with some variations in the instrumentation and vocal ad-libs. Bridge (2:34-2:49): The bridge provides a contrast to the chorus, with a slower tempo and a different chord progression. Rihanna sings "Yellow diamonds in the light / And we're standing side by side." Chorus 3 (2:49-3:19): The third chorus is a repeat of the first two choruses, with additional vocal ad-libs and harmonies. Outro (3:19-3:50): The song ends with a repetition of the chorus and an instrumental fade-out.
+
+Overall, the arrangement of "We Found Love" follows a standard pop song structure, with an intro, verses, pre-choruses, choruses, and a bridge. The song features variations, such as the repetition of the pre-chorus and the vocal ad-libs and harmonies in the choruses. The bridge adds to the dynamic and memorable quality of the song by providing a contrast to the chorus.
+
+Diamonds
+
+```{r}
+library(tidyverse)
+library(spotifyr)
+library(compmus)
+
+bzt<-
+  get_tidy_audio_analysis("6O20JhBJPePEkBdrB5sqRx") |> # Change URI.
+  compmus_align(bars, segments) |>                     # Change `bars`
+  select(bars) |>                                      #   in all three
+  unnest(bars) |>                                      #   of these lines.
+  mutate(
+    pitches =
+      map(segments,
+          compmus_summarise, pitches,
+          method = "rms", norm = "euclidean"              # Change summary & norm.
+      )
+  ) |>
+  mutate(
+    timbre =
+      map(segments,
+          compmus_summarise, timbre,
+          method = "rms", norm = "euclidean"              # Change summary & norm.
+      )
+  )
+
+bzt |>
+  compmus_gather_timbre() |>
+  ggplot(
+    aes(
+      x = start + duration / 2,
+      width = duration,
+      y = basis,
+      fill = value
+    )
+  ) +
+  geom_tile() +
+  labs(x = "Time (s)", y = NULL, fill = "Magnitude") +
+  scale_fill_viridis_c() +                              
+  theme_classic()
+
+
+bzt |>
+  compmus_self_similarity(timbre, "cosine") |> 
+  ggplot(
+    aes(
+      x = xstart + xduration / 2,
+      width = xduration,
+      y = ystart + yduration / 2,
+      height = yduration,
+      fill = d
+    )
+  ) +
+  geom_tile() +
+  coord_fixed() +
+  scale_fill_viridis_c(guide = "none") +
+  theme_classic() +
+  labs(x = "", y = "")
+```
+
+Intro (0:00-0:07): The song starts with a slow and atmospheric instrumental intro, with a repeating piano melody and Rihanna's vocals. Verse 1 (0:07-0:38): The first verse features Rihanna's vocals over a sparse instrumental accompaniment, building to a pre-chorus. Pre-chorus (0:38-0:52): The pre-chorus is a short section that serves as a transition from the verse to the chorus, with a more intense instrumental accompaniment. Chorus 1 (0:52-1:22): The first chorus features a catchy and repetitive melody, with Rihanna's vocals over a layered and upbeat instrumental accompaniment. Verse 2 (1:22-1:53): The second verse is similar to the first verse, but with some variations in the instrumentation and vocal delivery. Pre-chorus (1:53-2:07): The pre-chorus is repeated, leading into the second chorus. Chorus 2 (2:07-2:38): The second chorus is a repeat of the first chorus, but with some variations in the instrumentation and vocal ad-libs. Bridge (2:38-3:09): The bridge provides a contrast to the chorus, with a slower tempo and a different chord progression. Rihanna sings "So shine bright, tonight you and I / We're beautiful like diamonds in the sky." Chorus 3 (3:09-3:39): The third chorus is a repeat of the first two choruses, with additional vocal ad-libs and harmonies. Outro (3:39-4:22): The song ends with a repetition of the chorus and an instrumental fade-out.
+
+Overall, the arrangement of "Diamonds" follows a standard pop song structure, with an intro, verses, pre-choruses, choruses, and a bridge. The song features variations, such as the repetition of the pre-chorus and the vocal ad-libs and harmonies in the choruses. The bridge adds to the dynamic and memorable quality of the song by providing a contrast to the chorus.
+
+Work
+
+```{r}
+bzt<-
+  get_tidy_audio_analysis("5gZsEYaYvyi1sAVyuiXbDm") |> # Change URI.
+  compmus_align(bars, segments) |>                     # Change `bars`
+  select(bars) |>                                      #   in all three
+  unnest(bars) |>                                      #   of these lines.
+  mutate(
+    pitches =
+      map(segments,
+          compmus_summarise, pitches,
+          method = "rms", norm = "euclidean"              # Change summary & norm.
+      )
+  ) |>
+  mutate(
+    timbre =
+      map(segments,
+          compmus_summarise, timbre,
+          method = "rms", norm = "euclidean"              # Change summary & norm.
+      )
+  )
+
+bzt |>
+  compmus_gather_timbre() |>
+  ggplot(
+    aes(
+      x = start + duration / 2,
+      width = duration,
+      y = basis,
+      fill = value
+    )
+  ) +
+  geom_tile() +
+  labs(x = "Time (s)", y = NULL, fill = "Magnitude") +
+  scale_fill_viridis_c() +                              
+  theme_classic()
+
+
+bzt |>
+  compmus_self_similarity(timbre, "cosine") |> 
+  ggplot(
+    aes(
+      x = xstart + xduration / 2,
+      width = xduration,
+      y = ystart + yduration / 2,
+      height = yduration,
+      fill = d
+    )
+  ) +
+  geom_tile() +
+  coord_fixed() +
+  scale_fill_viridis_c(guide = "none") +
+  theme_classic() +
+  labs(x = "", y = "")
+```
+
+"Work" by Rihanna is a dancehall and reggae-pop influenced song that follows a non-traditional pop song structure. Here is the arrangement of the song based on the most common sources:
+
+Intro (0:00-0:13): The song starts with a repeating instrumental riff and Rihanna's vocal ad-libs. Verse 1 (0:13-0:39): The first verse features Rihanna's vocals in Jamaican Patois over a sparse instrumental accompaniment, building to a pre-chorus. Pre-chorus (0:39-0:53): The pre-chorus is a short section that serves as a transition from the verse to the chorus, with a more intense instrumental accompaniment. Chorus 1 (0:53-1:29): The first chorus features Rihanna's vocals over a dancehall-inspired instrumental accompaniment, with a repetitive and catchy melody. Verse 2 (1:29-1:57): The second verse is similar to the first verse, but with some variations in the instrumentation and vocal delivery. Pre-chorus (1:57-2:12): The pre-chorus is repeated, leading into the second chorus. Chorus 2 (2:12-2:49): The second chorus is a repeat of the first chorus, with some variations in the instrumentation and vocal ad-libs. Bridge (2:49-3:04): The bridge is a short section that features a contrasting instrumental accompaniment and Rihanna's vocals in English, singing "You see me I be work, work, work, work, work, work." Chorus 3 (3:04-3:42): The third chorus is a repeat of the first two choruses, with additional vocal ad-libs and harmonies. Outro (3:42-3:59): The song ends with a repetition of the chorus and an instrumental fade-out.
+
+Overall, the arrangement of "Work" follows a non-traditional pop song structure, with an intro, verses, pre-choruses, choruses, and a bridge. The song features variations, such as the use of Jamaican Patois in the verses and the dancehall-inspired instrumental accompaniment. The bridge adds to the dynamic and memorable quality of the song by providing a contrast to the chorus.
+
+###Inspiration
 
 For my corpus, I decided to focus on learning more about Rihanna by analyzing her albums: \\\*\\\*Music of the sun (2005), A Girl like me (2006), Good girl gone bad (2008), Rated R(2009), Loud(2010), Talk that talk (2012), Unapologetic (2012) and Anti(2016)\\\*\\\*\\\\ ##I believe that, Rihanna's albums reflect her personal growth and experiences. From her early albums to her most recent releases, she has tackled themes such as love, heartbreak, and social issues. She is one of the most successful and influential pop stars of the past decade, and her music has resonated with millions of fans around the world. #Apart from my great admiration towards her I believe that by delving deeper into Rihanna's albums, I would be able to gain a better understanding of her creative process, the themes and motifs that she explores, and the evolution of her sound over time. My plans consist of extracting each of her most famous songs per album according to themes: Love, Heartbreak and Powerr, with the help of the software tools that we are gonna implement. Furthermore I am hoping to learn more about the collaborations and production techniques that go into making a successful album and explore what makes her music so popular and groundbreaking, where I believe I would be able to gain a deeper appreciation for the emotional depth and honesty in her music. Additionally by analyzing Rihanna's albums, I believe I would be able to develop my own critical thinking skills and strengthen my ability to identify and articulate what makes a particular song or album great . I am eager to examine the lyrics, melody, rhythm, instrumentation, and production choices that contribute to the overall impact of her music.
 
-This is the updated version of my corpus where I managed to analyse the audio features of each track of Rihanna's albums and visualize them into charts. However I am still strugglig to make their size equal as well as to make them interactive. I am happy that I also developed a chromatograms for each of the most streamed songs per album. 
+This is the updated version of my corpus where I managed to analyse the audio features of each track of Rihanna's albums and visualize them into charts. However I am still strugglig to make their size equal as well as to make them interactive. I am happy that I also developed a chromatograms for each of the most streamed songs per album.
 
-## Column {data-width="650"}
-
-### Chart B
+### Chart Popularirty of all Rihanna's album from 2005 they 2016
 
 ```{r}
 library(tidyverse)
