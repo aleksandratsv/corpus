@@ -11,12 +11,10 @@ library(flexdashboard)
 library(cowplot)
 ```
 
-# Features
+Cepstrograms and Self-Similarity Matrices
+=====================================  
 
-## Column {data-width="350"}Column {.tabset}
-
-Pon de Replay
-
+##Pon de Replay
 Features of Rihanna's Pon de Replay Intro (0:00-0:11): The song begins with a brief intro featuring a repeating synth melody and Rihanna's vocals. Verse 1 (0:11-0:33): The first verse begins with Rihanna's vocals over a sparse beat, building to a more intense chorus. Chorus 1 (0:33-0:56): The first chorus features Rihanna's catchy hook "Come Mr. DJ song pon de replay," over a driving beat. Verse 2 (0:56-1:17): The second verse features a similar structure to the first verse, building to the second chorus. Chorus 2 (1:17-1:41): The second chorus is a repeat of the first chorus. Bridge (1:41-2:02): The bridge provides a contrast to the chorus, featuring a different melody and lyrics Chorus 3 (2:02-2:26): The third chorus is a repeat of the first two choruses, with a few variations in the instrumentation. Outro (2:26-3:18): The song ends with a fade-out of the chorus, featuring Rihanna's vocals and a repeating synth melody.
 
 Overall, the arrangement of "Pon de Replay" follows a traditional pop song structure, with an intro, verses, chorus, bridge, and outro, with each section building on the previous one to create a dynamic and engaging song.
@@ -80,7 +78,7 @@ bzt |>
   labs(x = "", y = "")
 ```
 
-Unfaithful
+##Unfaithful
 
 Intro (0:00-0:19): The song begins with a slow and mournful piano melody, which sets the tone for the emotional lyrics that follow. Verse 1 (0:19-0:41): The first verse begins with Rihanna's vocals over a simple piano accompaniment, building to a more intense chorus. Chorus 1 (0:41-1:02): The first chorus features Rihanna's emotive vocals over a more layered and complex instrumental accompaniment. Verse 2 (1:02-1:24): The second verse features a similar structure to the first verse, building to the second chorus. Chorus 2 (1:24-1:45): The second chorus is a repeat of the first chorus, with slight variations in the instrumentation and vocal delivery. Bridge (1:45-2:06): The bridge provides a contrast to the chorus, featuring a different melody and lyrics, as Rihanna sings "I don't wanna be the reason why / Every time I walk out the door / I see him die a little more inside." Chorus 3 (2:06-2:27): The third chorus is a repeat of the first two choruses, with a few variations in the instrumentation. Outro (2:27-3:51): The song ends with a repetition of the intro's piano melody, with Rihanna's vocals fading out.
 
@@ -141,7 +139,7 @@ mpt |>
   labs(x = "", y = "")
 ```
 
-Umbrella
+##Umbrella
 
 Intro (0:00-0:10): The song begins with a synth chord progression and a simple drum pattern. Verse 1 (0:10-0:43): The first verse features Rihanna's vocals over a sparse instrumental accompaniment, building to a pre-chorus. Pre-chorus (0:43-1:02): The pre-chorus begins with a slightly more intense instrumental accompaniment. Chorus 1 (1:02-1:32): The first chorus features a catchy and repetitive melody, with Rihanna's vocals over a layered and upbeat instrumental accompaniment. Verse 2 (1:32-2:06): The second verse is similar to the first verse, but with slight variations in the instrumentation and vocal delivery. Pre-chorus (2:06-2:25): The pre-chorus is repeated, leading into the second chorus. Chorus 2 (2:25-2:56): The second chorus is a repeat of the first chorus, but with some variations in the instrumentation and vocal ad-libs. Bridge (2:56-3:18): The bridge provides a contrast to the chorus, with a slower tempo and a different chord progression. Rihanna sings "You can run into my arms / It's okay, don't be alarmed / Come into me / There's no distance in between our love." Chorus 3 (3:18-3:49): The third chorus is a repeat of the first two choruses, with additional vocal ad-libs and harmonies. Outro (3:49-4:13): The song ends with a repetition of the chorus and an instrumental fade-out.
 
@@ -200,7 +198,7 @@ llt |>
   labs(x = "", y = "")
 ```
 
-Rude boy
+##Rude boy
 
 Intro (0:00-0:11): The song starts with a drum loop, a synth riff, and Rihanna's vocals. Verse 1 (0:11-0:43): The first verse features Rihanna's vocals over a sparse instrumental accompaniment, building to a pre-chorus. Pre-chorus (0:43-0:59): Starts with a more intense instrumental accompaniment. Chorus 1 (0:59-1:30): The first chorus features a catchy and repetitive melody, with Rihanna's vocals over a layered and upbeat instrumental accompaniment. Verse 2 (1:30-2:03): The second verse is similar to the first verse, but with some variations in the instrumentation and vocal delivery. Pre-chorus (2:03-2:19): The pre-chorus is repeated, leading into the second chorus. Chorus 2 (2:19-2:50): The second chorus is a repeat of the first chorus, but with some variations in the instrumentation and vocal ad-libs. Bridge (2:50-3:12): The bridge provides a contrast to the chorus, with a slower tempo and a different chord progression. Rihanna sings "Come here rude boy, boy, can you get it up? / Come here rude boy, boy, is you big enough? / Take it, take it, baby, baby / Take it, take it, love me, love me." Chorus 3 (3:12-3:43): The third chorus is a repeat of the first two choruses, with additional vocal ad-libs and harmonies. Outro (3:43-3:57): The song ends with a repetition of the chorus and an instrumental fade-out.
 
@@ -261,7 +259,7 @@ jkt |>
   labs(x = "", y = "")
 ```
 
-S&M
+##S&M
 
 Verse 2 (1:33-2:05): The second verse is similar to the first verse, but with some variations in the instrumentation and vocal delivery. Pre-chorus (2:05-2:21): The pre-chorus is repeated, leading into the second chorus. Chorus 2 (2:21-2:51): The second chorus is a repeat of the first chorus, but with some variations in the instrumentation and vocal ad-libs. Bridge (2:51-3:23): The bridge provides a contrast to the chorus, with a slower tempo and a different chord progression. Chorus 3 (3:23-3:53): The third chorus is a repeat of the first two choruses, with additional vocal ad-libs and harmonies. Outro (3:53-4:16): The song ends with a repetition of the chorus and an instrumental fade-out.
 
@@ -323,7 +321,7 @@ lao |>
   labs(x = "", y = "")
 ```
 
-We found love
+##We found love
 
 ```{r}
 bzt<-
@@ -385,7 +383,7 @@ Intro (0:00-0:04): The song starts with a repetitive synth riff and Rihanna's vo
 
 Overall, the arrangement of "We Found Love" follows a standard pop song structure, with an intro, verses, pre-choruses, choruses, and a bridge. The song features variations, such as the repetition of the pre-chorus and the vocal ad-libs and harmonies in the choruses. The bridge adds to the dynamic and memorable quality of the song by providing a contrast to the chorus.
 
-Diamonds
+##Diamonds
 
 ```{r}
 library(tidyverse)
@@ -450,7 +448,7 @@ Intro (0:00-0:07): The song starts with a slow and atmospheric instrumental intr
 
 Overall, the arrangement of "Diamonds" follows a standard pop song structure, with an intro, verses, pre-choruses, choruses, and a bridge. The song features variations, such as the repetition of the pre-chorus and the vocal ad-libs and harmonies in the choruses. The bridge adds to the dynamic and memorable quality of the song by providing a contrast to the chorus.
 
-Work
+##Work
 
 ```{r}
 bzt<-
@@ -513,13 +511,10 @@ Intro (0:00-0:13): The song starts with a repeating instrumental riff and Rihann
 
 Overall, the arrangement of "Work" follows a non-traditional pop song structure, with an intro, verses, pre-choruses, choruses, and a bridge. The song features variations, such as the use of Jamaican Patois in the verses and the dancehall-inspired instrumental accompaniment. The bridge adds to the dynamic and memorable quality of the song by providing a contrast to the chorus.
 
-###Inspiration
+Popularity of Albums 
+=====================================  
 
-For my corpus, I decided to focus on learning more about Rihanna by analyzing her albums: \\\*\\\*Music of the sun (2005), A Girl like me (2006), Good girl gone bad (2008), Rated R(2009), Loud(2010), Talk that talk (2012), Unapologetic (2012) and Anti(2016)\\\*\\\*\\\\ ##I believe that, Rihanna's albums reflect her personal growth and experiences. From her early albums to her most recent releases, she has tackled themes such as love, heartbreak, and social issues. She is one of the most successful and influential pop stars of the past decade, and her music has resonated with millions of fans around the world. #Apart from my great admiration towards her I believe that by delving deeper into Rihanna's albums, I would be able to gain a better understanding of her creative process, the themes and motifs that she explores, and the evolution of her sound over time. My plans consist of extracting each of her most famous songs per album according to themes: Love, Heartbreak and Powerr, with the help of the software tools that we are gonna implement. Furthermore I am hoping to learn more about the collaborations and production techniques that go into making a successful album and explore what makes her music so popular and groundbreaking, where I believe I would be able to gain a deeper appreciation for the emotional depth and honesty in her music. Additionally by analyzing Rihanna's albums, I believe I would be able to develop my own critical thinking skills and strengthen my ability to identify and articulate what makes a particular song or album great . I am eager to examine the lyrics, melody, rhythm, instrumentation, and production choices that contribute to the overall impact of her music.
-
-This is the updated version of my corpus where I managed to analyse the audio features of each track of Rihanna's albums and visualize them into charts. However I am still strugglig to make their size equal as well as to make them interactive. I am happy that I also developed a chromatograms for each of the most streamed songs per album.
-
-### Chart Popularirty of all Rihanna's album from 2005 they 2016
+##Chart Popularirty of all Rihanna's album from 2005 they 2016
 
 ```{r}
 library(tidyverse)
@@ -537,12 +532,12 @@ ggplot(album_data, aes(x = album_names, y = album_popularity)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-# Analysis of the musical features of each album of Rihanna
 
-## Column {data-width="350"}Column {.tabset}
+Albums
+==============================
 
-### MUSIC OF THE SUN 2005
 
+##MUSIC OF THE SUN 2005
 ```{r}
 library(spotifyr)
 library(dplyr)
@@ -581,7 +576,7 @@ for (i in 1:nrow(mot_tracks)) {
 }
 ```
 
-### A GIRL LIKE ME 2006
+### A GIRL LIKE ME 2006 
 
 ```{r}
 library(spotifyr)
@@ -620,7 +615,7 @@ for (i in 1:nrow(mot_tracks)) {
 }
 ```
 
-### GOOD GIRL GONE BAD 2008
+###GOOD GIRL GONE BAD 2008  
 
 ```{r}
 library(spotifyr)
@@ -659,7 +654,8 @@ for (i in 1:nrow(mot_tracks)) {
 }
 ```
 
-### RATED R 2009
+
+###RATED R 2009 
 
 ```{r}
 library(spotifyr)
@@ -699,7 +695,7 @@ for (i in 1:nrow(mot_tracks)) {
 }
 ```
 
-### LOUD 2010
+###Loud
 
 ```{r}
 library(spotifyr)
@@ -739,8 +735,8 @@ for (i in 1:nrow(newt_tracks)) {
 }
 ```
 
-### TALK THAT TALK 2011
 
+###TALK THAT TALK 2011 
 ```{r}
 library(spotifyr)
 library(dplyr)
@@ -779,7 +775,7 @@ for (i in 1:nrow(newp_tracks)) {
 }
 ```
 
-### UNAPOLOGETIC 2012
+###UNAPOLOGETIC 2012 
 
 ```{r}
 library(spotifyr)
@@ -819,7 +815,7 @@ for (i in 1:nrow(newt_tracks)) {
 }
 ```
 
-### ANTI 2016
+###ANTI 2016 
 
 ```{r}
 library(spotifyr)
@@ -860,11 +856,11 @@ for (i in 1:nrow(anti_tracks)) {
 
 ```
 
-# Overview {data-width="1000"}
+Chromatograms
+=====================================  
+Chromatograms of the most streamed songs of Rihanna per album 
 
-## \# Chromatograms {data-width="1000"}
 
-------------------------------------------------------------------------
 
 ```{r}
 
@@ -892,11 +888,7 @@ wood |>
   labs(x = "Time (s)", y = NULL, fill = "Magnitude",title = "Pon de Replay") +
   theme_minimal() +
   scale_fill_viridis_c()
-```
 
-------------------------------------------------------------------------
-
-```{r}
 library(tidyverse)
 library(spotifyr)
 library(compmus)
@@ -922,11 +914,8 @@ wood |>
   theme_minimal() +
   scale_fill_viridis_c()
 
-```
 
-------------------------------------------------------------------------
 
-```{r}
 library(tidyverse)
 library(spotifyr)
 library(compmus)
@@ -952,11 +941,7 @@ wood |>
   theme_minimal() +
   scale_fill_viridis_c()
   
-```
 
-------------------------------------------------------------------------
-
-```{r}
 library(tidyverse)
 library(spotifyr)
 library(compmus)
@@ -981,12 +966,7 @@ wood |>
   labs(x = "Time (s)", y = NULL, fill = "Magnitude",title = "Rude Boy") +
   theme_minimal() +
   scale_fill_viridis_c()
-  
-```
 
-------------------------------------------------------------------------
-
-```{r}
 
 library(tidyverse)
 library(spotifyr)
@@ -1014,11 +994,7 @@ wood |>
   scale_fill_viridis_c()
   
   
-```
 
-------------------------------------------------------------------------
-
-```{r}
 library(tidyverse)
 library(spotifyr)
 library(compmus)
@@ -1047,11 +1023,7 @@ where |>
   
   
   
-```
 
-------------------------------------------------------------------------
-
-```{r}
 library(tidyverse)
 library(spotifyr)
 library(compmus)
@@ -1079,12 +1051,7 @@ where |>
   scale_fill_viridis_c()
   
   
-  
-```
 
-------------------------------------------------------------------------
-
-```{r}
 
 library(tidyverse)
 library(spotifyr)
@@ -1113,3 +1080,1067 @@ where |>
   scale_fill_viridis_c()
   
 ```
+
+
+
+
+Pon de replay{data-navmenu=Chordograms&Keys}
+===================================== 
+
+```{r}
+library(tidyverse)
+library(spotifyr)
+library(compmus)
+
+
+circshift <- function(v, n) {
+  if (n == 0) v else c(tail(v, n), head(v, -n))
+}
+
+#      C     C#    D     Eb    E     F     F#    G     Ab    A     Bb    B
+major_chord <-
+  c(   1,    0,    0,    0,    1,    0,    0,    1,    0,    0,    0,    0)
+minor_chord <-
+  c(   1,    0,    0,    1,    0,    0,    0,    1,    0,    0,    0,    0)
+seventh_chord <-
+  c(   1,    0,    0,    0,    1,    0,    0,    1,    0,    0,    1,    0)
+
+major_key <-
+  c(6.35, 2.23, 3.48, 2.33, 4.38, 4.09, 2.52, 5.19, 2.39, 3.66, 2.29, 2.88)
+minor_key <-
+  c(6.33, 2.68, 3.52, 5.38, 2.60, 3.53, 2.54, 4.75, 3.98, 2.69, 3.34, 3.17)
+
+chord_templates <-
+  tribble(
+    ~name, ~template,
+    "Gb:7", circshift(seventh_chord, 6),
+    "Gb:maj", circshift(major_chord, 6),
+    "Bb:min", circshift(minor_chord, 10),
+    "Db:maj", circshift(major_chord, 1),
+    "F:min", circshift(minor_chord, 5),
+    "Ab:7", circshift(seventh_chord, 8),
+    "Ab:maj", circshift(major_chord, 8),
+    "C:min", circshift(minor_chord, 0),
+    "Eb:7", circshift(seventh_chord, 3),
+    "Eb:maj", circshift(major_chord, 3),
+    "G:min", circshift(minor_chord, 7),
+    "Bb:7", circshift(seventh_chord, 10),
+    "Bb:maj", circshift(major_chord, 10),
+    "D:min", circshift(minor_chord, 2),
+    "F:7", circshift(seventh_chord, 5),
+    "F:maj", circshift(major_chord, 5),
+    "A:min", circshift(minor_chord, 9),
+    "C:7", circshift(seventh_chord, 0),
+    "C:maj", circshift(major_chord, 0),
+    "E:min", circshift(minor_chord, 4),
+    "G:7", circshift(seventh_chord, 7),
+    "G:maj", circshift(major_chord, 7),
+    "B:min", circshift(minor_chord, 11),
+    "D:7", circshift(seventh_chord, 2),
+    "D:maj", circshift(major_chord, 2),
+    "F#:min", circshift(minor_chord, 6),
+    "A:7", circshift(seventh_chord, 9),
+    "A:maj", circshift(major_chord, 9),
+    "C#:min", circshift(minor_chord, 1),
+    "E:7", circshift(seventh_chord, 4),
+    "E:maj", circshift(major_chord, 4),
+    "G#:min", circshift(minor_chord, 8),
+    "B:7", circshift(seventh_chord, 11),
+    "B:maj", circshift(major_chord, 11),
+    "D#:min", circshift(minor_chord, 3)
+  )
+
+key_templates <-
+  tribble(
+    ~name, ~template,
+    "Gb:maj", circshift(major_key, 6),
+    "Bb:min", circshift(minor_key, 10),
+    "Db:maj", circshift(major_key, 1),
+    "F:min", circshift(minor_key, 5),
+    "Ab:maj", circshift(major_key, 8),
+    "C:min", circshift(minor_key, 0),
+    "Eb:maj", circshift(major_key, 3),
+    "G:min", circshift(minor_key, 7),
+    "Bb:maj", circshift(major_key, 10),
+    "D:min", circshift(minor_key, 2),
+    "F:maj", circshift(major_key, 5),
+    "A:min", circshift(minor_key, 9),
+    "C:maj", circshift(major_key, 0),
+    "E:min", circshift(minor_key, 4),
+    "G:maj", circshift(major_key, 7),
+    "B:min", circshift(minor_key, 11),
+    "D:maj", circshift(major_key, 2),
+    "F#:min", circshift(minor_key, 6),
+    "A:maj", circshift(major_key, 9),
+    "C#:min", circshift(minor_key, 1),
+    "E:maj", circshift(major_key, 4),
+    "G#:min", circshift(minor_key, 8),
+    "B:maj", circshift(major_key, 11),
+    "D#:min", circshift(minor_key, 3)
+  )
+
+
+pondereplay <-
+  get_tidy_audio_analysis("4TsmezEQVSZNNPv5RJ65Ov") |>
+  compmus_align(sections, segments) |>
+  select(sections) |>
+  unnest(sections) |>
+  mutate(
+    pitches =
+      map(segments,
+          compmus_summarise, pitches,
+          method = "mean", norm = "manhattan"
+      )
+  )
+
+
+pondereplay |> 
+  compmus_match_pitch_template(
+    key_templates,         # Change to chord_templates if descired
+    method = "euclidean",  # Try different distance metrics
+    norm = "manhattan"     # Try different norms
+  ) |>
+  ggplot(
+    aes(x = start + duration / 2, width = duration, y = name, fill = d)
+  ) +
+  geom_tile() +
+  scale_fill_viridis_c(guide = "none") +
+  theme_minimal() +
+  labs(x = "Time (s)", y = "")
+
+```
+
+
+
+
+Unfaithful{data-navmenu=Chordograms&Keys}
+===================================== 
+
+
+```{r}
+library(tidyverse)
+library(spotifyr)
+library(compmus)
+
+
+circshift <- function(v, n) {
+  if (n == 0) v else c(tail(v, n), head(v, -n))
+}
+
+#      C     C#    D     Eb    E     F     F#    G     Ab    A     Bb    B
+major_chord <-
+  c(   1,    0,    0,    0,    1,    0,    0,    1,    0,    0,    0,    0)
+minor_chord <-
+  c(   1,    0,    0,    1,    0,    0,    0,    1,    0,    0,    0,    0)
+seventh_chord <-
+  c(   1,    0,    0,    0,    1,    0,    0,    1,    0,    0,    1,    0)
+
+major_key <-
+  c(6.35, 2.23, 3.48, 2.33, 4.38, 4.09, 2.52, 5.19, 2.39, 3.66, 2.29, 2.88)
+minor_key <-
+  c(6.33, 2.68, 3.52, 5.38, 2.60, 3.53, 2.54, 4.75, 3.98, 2.69, 3.34, 3.17)
+
+chord_templates <-
+  tribble(
+    ~name, ~template,
+    "Gb:7", circshift(seventh_chord, 6),
+    "Gb:maj", circshift(major_chord, 6),
+    "Bb:min", circshift(minor_chord, 10),
+    "Db:maj", circshift(major_chord, 1),
+    "F:min", circshift(minor_chord, 5),
+    "Ab:7", circshift(seventh_chord, 8),
+    "Ab:maj", circshift(major_chord, 8),
+    "C:min", circshift(minor_chord, 0),
+    "Eb:7", circshift(seventh_chord, 3),
+    "Eb:maj", circshift(major_chord, 3),
+    "G:min", circshift(minor_chord, 7),
+    "Bb:7", circshift(seventh_chord, 10),
+    "Bb:maj", circshift(major_chord, 10),
+    "D:min", circshift(minor_chord, 2),
+    "F:7", circshift(seventh_chord, 5),
+    "F:maj", circshift(major_chord, 5),
+    "A:min", circshift(minor_chord, 9),
+    "C:7", circshift(seventh_chord, 0),
+    "C:maj", circshift(major_chord, 0),
+    "E:min", circshift(minor_chord, 4),
+    "G:7", circshift(seventh_chord, 7),
+    "G:maj", circshift(major_chord, 7),
+    "B:min", circshift(minor_chord, 11),
+    "D:7", circshift(seventh_chord, 2),
+    "D:maj", circshift(major_chord, 2),
+    "F#:min", circshift(minor_chord, 6),
+    "A:7", circshift(seventh_chord, 9),
+    "A:maj", circshift(major_chord, 9),
+    "C#:min", circshift(minor_chord, 1),
+    "E:7", circshift(seventh_chord, 4),
+    "E:maj", circshift(major_chord, 4),
+    "G#:min", circshift(minor_chord, 8),
+    "B:7", circshift(seventh_chord, 11),
+    "B:maj", circshift(major_chord, 11),
+    "D#:min", circshift(minor_chord, 3)
+  )
+
+key_templates <-
+  tribble(
+    ~name, ~template,
+    "Gb:maj", circshift(major_key, 6),
+    "Bb:min", circshift(minor_key, 10),
+    "Db:maj", circshift(major_key, 1),
+    "F:min", circshift(minor_key, 5),
+    "Ab:maj", circshift(major_key, 8),
+    "C:min", circshift(minor_key, 0),
+    "Eb:maj", circshift(major_key, 3),
+    "G:min", circshift(minor_key, 7),
+    "Bb:maj", circshift(major_key, 10),
+    "D:min", circshift(minor_key, 2),
+    "F:maj", circshift(major_key, 5),
+    "A:min", circshift(minor_key, 9),
+    "C:maj", circshift(major_key, 0),
+    "E:min", circshift(minor_key, 4),
+    "G:maj", circshift(major_key, 7),
+    "B:min", circshift(minor_key, 11),
+    "D:maj", circshift(major_key, 2),
+    "F#:min", circshift(minor_key, 6),
+    "A:maj", circshift(major_key, 9),
+    "C#:min", circshift(minor_key, 1),
+    "E:maj", circshift(major_key, 4),
+    "G#:min", circshift(minor_key, 8),
+    "B:maj", circshift(major_key, 11),
+    "D#:min", circshift(minor_key, 3)
+  )
+
+
+unfaith <-
+  get_tidy_audio_analysis("1oh6hjPd82XlGFQGUh2Jfa") |>
+  compmus_align(sections, segments) |>
+  select(sections) |>
+  unnest(sections) |>
+  mutate(
+    pitches =
+      map(segments,
+          compmus_summarise, pitches,
+          method = "mean", norm = "manhattan"
+      )
+  )
+
+
+unfaith |> 
+  compmus_match_pitch_template(
+    key_templates,         # Change to chord_templates if descired
+    method = "euclidean",  # Try different distance metrics
+    norm = "manhattan"     # Try different norms
+  ) |>
+  ggplot(
+    aes(x = start + duration / 2, width = duration, y = name, fill = d)
+  ) +
+  geom_tile() +
+  scale_fill_viridis_c(guide = "none") +
+  theme_minimal() +
+  labs(x = "Time (s)", y = "")
+```
+
+
+
+
+Umbrella{data-navmenu=Chordograms&Keys}
+===================================== 
+
+
+```{r}
+
+library(tidyverse)
+library(spotifyr)
+library(compmus)
+
+
+circshift <- function(v, n) {
+  if (n == 0) v else c(tail(v, n), head(v, -n))
+}
+
+#      C     C#    D     Eb    E     F     F#    G     Ab    A     Bb    B
+major_chord <-
+  c(   1,    0,    0,    0,    1,    0,    0,    1,    0,    0,    0,    0)
+minor_chord <-
+  c(   1,    0,    0,    1,    0,    0,    0,    1,    0,    0,    0,    0)
+seventh_chord <-
+  c(   1,    0,    0,    0,    1,    0,    0,    1,    0,    0,    1,    0)
+
+major_key <-
+  c(6.35, 2.23, 3.48, 2.33, 4.38, 4.09, 2.52, 5.19, 2.39, 3.66, 2.29, 2.88)
+minor_key <-
+  c(6.33, 2.68, 3.52, 5.38, 2.60, 3.53, 2.54, 4.75, 3.98, 2.69, 3.34, 3.17)
+
+chord_templates <-
+  tribble(
+    ~name, ~template,
+    "Gb:7", circshift(seventh_chord, 6),
+    "Gb:maj", circshift(major_chord, 6),
+    "Bb:min", circshift(minor_chord, 10),
+    "Db:maj", circshift(major_chord, 1),
+    "F:min", circshift(minor_chord, 5),
+    "Ab:7", circshift(seventh_chord, 8),
+    "Ab:maj", circshift(major_chord, 8),
+    "C:min", circshift(minor_chord, 0),
+    "Eb:7", circshift(seventh_chord, 3),
+    "Eb:maj", circshift(major_chord, 3),
+    "G:min", circshift(minor_chord, 7),
+    "Bb:7", circshift(seventh_chord, 10),
+    "Bb:maj", circshift(major_chord, 10),
+    "D:min", circshift(minor_chord, 2),
+    "F:7", circshift(seventh_chord, 5),
+    "F:maj", circshift(major_chord, 5),
+    "A:min", circshift(minor_chord, 9),
+    "C:7", circshift(seventh_chord, 0),
+    "C:maj", circshift(major_chord, 0),
+    "E:min", circshift(minor_chord, 4),
+    "G:7", circshift(seventh_chord, 7),
+    "G:maj", circshift(major_chord, 7),
+    "B:min", circshift(minor_chord, 11),
+    "D:7", circshift(seventh_chord, 2),
+    "D:maj", circshift(major_chord, 2),
+    "F#:min", circshift(minor_chord, 6),
+    "A:7", circshift(seventh_chord, 9),
+    "A:maj", circshift(major_chord, 9),
+    "C#:min", circshift(minor_chord, 1),
+    "E:7", circshift(seventh_chord, 4),
+    "E:maj", circshift(major_chord, 4),
+    "G#:min", circshift(minor_chord, 8),
+    "B:7", circshift(seventh_chord, 11),
+    "B:maj", circshift(major_chord, 11),
+    "D#:min", circshift(minor_chord, 3)
+  )
+
+key_templates <-
+  tribble(
+    ~name, ~template,
+    "Gb:maj", circshift(major_key, 6),
+    "Bb:min", circshift(minor_key, 10),
+    "Db:maj", circshift(major_key, 1),
+    "F:min", circshift(minor_key, 5),
+    "Ab:maj", circshift(major_key, 8),
+    "C:min", circshift(minor_key, 0),
+    "Eb:maj", circshift(major_key, 3),
+    "G:min", circshift(minor_key, 7),
+    "Bb:maj", circshift(major_key, 10),
+    "D:min", circshift(minor_key, 2),
+    "F:maj", circshift(major_key, 5),
+    "A:min", circshift(minor_key, 9),
+    "C:maj", circshift(major_key, 0),
+    "E:min", circshift(minor_key, 4),
+    "G:maj", circshift(major_key, 7),
+    "B:min", circshift(minor_key, 11),
+    "D:maj", circshift(major_key, 2),
+    "F#:min", circshift(minor_key, 6),
+    "A:maj", circshift(major_key, 9),
+    "C#:min", circshift(minor_key, 1),
+    "E:maj", circshift(major_key, 4),
+    "G#:min", circshift(minor_key, 8),
+    "B:maj", circshift(major_key, 11),
+    "D#:min", circshift(minor_key, 3)
+  )
+
+
+umbrella <-
+  get_tidy_audio_analysis("49FYlytm3dAAraYgpoJZux") |>
+  compmus_align(sections, segments) |>
+  select(sections) |>
+  unnest(sections) |>
+  mutate(
+    pitches =
+      map(segments,
+          compmus_summarise, pitches,
+          method = "mean", norm = "manhattan"
+      )
+  )
+
+
+umbrella |> 
+  compmus_match_pitch_template(
+    key_templates,         # Change to chord_templates if descired
+    method = "euclidean",  # Try different distance metrics
+    norm = "manhattan"     # Try different norms
+  ) |>
+  ggplot(
+    aes(x = start + duration / 2, width = duration, y = name, fill = d)
+  ) +
+  geom_tile() +
+  scale_fill_viridis_c(guide = "none") +
+  theme_minimal() +
+  labs(x = "Time (s)", y = "")
+
+```
+
+
+
+Rude Boy{data-navmenu=Chordograms&Keys}
+===================================== 
+
+
+```{r}
+library(tidyverse)
+library(spotifyr)
+library(compmus)
+
+
+circshift <- function(v, n) {
+  if (n == 0) v else c(tail(v, n), head(v, -n))
+}
+
+#      C     C#    D     Eb    E     F     F#    G     Ab    A     Bb    B
+major_chord <-
+  c(   1,    0,    0,    0,    1,    0,    0,    1,    0,    0,    0,    0)
+minor_chord <-
+  c(   1,    0,    0,    1,    0,    0,    0,    1,    0,    0,    0,    0)
+seventh_chord <-
+  c(   1,    0,    0,    0,    1,    0,    0,    1,    0,    0,    1,    0)
+
+major_key <-
+  c(6.35, 2.23, 3.48, 2.33, 4.38, 4.09, 2.52, 5.19, 2.39, 3.66, 2.29, 2.88)
+minor_key <-
+  c(6.33, 2.68, 3.52, 5.38, 2.60, 3.53, 2.54, 4.75, 3.98, 2.69, 3.34, 3.17)
+
+chord_templates <-
+  tribble(
+    ~name, ~template,
+    "Gb:7", circshift(seventh_chord, 6),
+    "Gb:maj", circshift(major_chord, 6),
+    "Bb:min", circshift(minor_chord, 10),
+    "Db:maj", circshift(major_chord, 1),
+    "F:min", circshift(minor_chord, 5),
+    "Ab:7", circshift(seventh_chord, 8),
+    "Ab:maj", circshift(major_chord, 8),
+    "C:min", circshift(minor_chord, 0),
+    "Eb:7", circshift(seventh_chord, 3),
+    "Eb:maj", circshift(major_chord, 3),
+    "G:min", circshift(minor_chord, 7),
+    "Bb:7", circshift(seventh_chord, 10),
+    "Bb:maj", circshift(major_chord, 10),
+    "D:min", circshift(minor_chord, 2),
+    "F:7", circshift(seventh_chord, 5),
+    "F:maj", circshift(major_chord, 5),
+    "A:min", circshift(minor_chord, 9),
+    "C:7", circshift(seventh_chord, 0),
+    "C:maj", circshift(major_chord, 0),
+    "E:min", circshift(minor_chord, 4),
+    "G:7", circshift(seventh_chord, 7),
+    "G:maj", circshift(major_chord, 7),
+    "B:min", circshift(minor_chord, 11),
+    "D:7", circshift(seventh_chord, 2),
+    "D:maj", circshift(major_chord, 2),
+    "F#:min", circshift(minor_chord, 6),
+    "A:7", circshift(seventh_chord, 9),
+    "A:maj", circshift(major_chord, 9),
+    "C#:min", circshift(minor_chord, 1),
+    "E:7", circshift(seventh_chord, 4),
+    "E:maj", circshift(major_chord, 4),
+    "G#:min", circshift(minor_chord, 8),
+    "B:7", circshift(seventh_chord, 11),
+    "B:maj", circshift(major_chord, 11),
+    "D#:min", circshift(minor_chord, 3)
+  )
+
+key_templates <-
+  tribble(
+    ~name, ~template,
+    "Gb:maj", circshift(major_key, 6),
+    "Bb:min", circshift(minor_key, 10),
+    "Db:maj", circshift(major_key, 1),
+    "F:min", circshift(minor_key, 5),
+    "Ab:maj", circshift(major_key, 8),
+    "C:min", circshift(minor_key, 0),
+    "Eb:maj", circshift(major_key, 3),
+    "G:min", circshift(minor_key, 7),
+    "Bb:maj", circshift(major_key, 10),
+    "D:min", circshift(minor_key, 2),
+    "F:maj", circshift(major_key, 5),
+    "A:min", circshift(minor_key, 9),
+    "C:maj", circshift(major_key, 0),
+    "E:min", circshift(minor_key, 4),
+    "G:maj", circshift(major_key, 7),
+    "B:min", circshift(minor_key, 11),
+    "D:maj", circshift(major_key, 2),
+    "F#:min", circshift(minor_key, 6),
+    "A:maj", circshift(major_key, 9),
+    "C#:min", circshift(minor_key, 1),
+    "E:maj", circshift(major_key, 4),
+    "G#:min", circshift(minor_key, 8),
+    "B:maj", circshift(major_key, 11),
+    "D#:min", circshift(minor_key, 3)
+  )
+
+
+rudeboy <-
+  get_tidy_audio_analysis("60jzFy6Nn4M0iD1d94oteF") |>
+  compmus_align(sections, segments) |>
+  select(sections) |>
+  unnest(sections) |>
+  mutate(
+    pitches =
+      map(segments,
+          compmus_summarise, pitches,
+          method = "mean", norm = "manhattan"
+      )
+  )
+
+
+rudeboy |> 
+  compmus_match_pitch_template(
+    key_templates,         # Change to chord_templates if descired
+    method = "euclidean",  # Try different distance metrics
+    norm = "manhattan"     # Try different norms
+  ) |>
+  ggplot(
+    aes(x = start + duration / 2, width = duration, y = name, fill = d)
+  ) +
+  geom_tile() +
+  scale_fill_viridis_c(guide = "none") +
+  theme_minimal() +
+  labs(x = "Time (s)", y = "")
+```
+
+
+
+S&M{data-navmenu=Chordograms&Keys}
+===================================== 
+
+
+```{r}
+library(tidyverse)
+library(spotifyr)
+library(compmus)
+
+
+circshift <- function(v, n) {
+  if (n == 0) v else c(tail(v, n), head(v, -n))
+}
+
+#      C     C#    D     Eb    E     F     F#    G     Ab    A     Bb    B
+major_chord <-
+  c(   1,    0,    0,    0,    1,    0,    0,    1,    0,    0,    0,    0)
+minor_chord <-
+  c(   1,    0,    0,    1,    0,    0,    0,    1,    0,    0,    0,    0)
+seventh_chord <-
+  c(   1,    0,    0,    0,    1,    0,    0,    1,    0,    0,    1,    0)
+
+major_key <-
+  c(6.35, 2.23, 3.48, 2.33, 4.38, 4.09, 2.52, 5.19, 2.39, 3.66, 2.29, 2.88)
+minor_key <-
+  c(6.33, 2.68, 3.52, 5.38, 2.60, 3.53, 2.54, 4.75, 3.98, 2.69, 3.34, 3.17)
+
+chord_templates <-
+  tribble(
+    ~name, ~template,
+    "Gb:7", circshift(seventh_chord, 6),
+    "Gb:maj", circshift(major_chord, 6),
+    "Bb:min", circshift(minor_chord, 10),
+    "Db:maj", circshift(major_chord, 1),
+    "F:min", circshift(minor_chord, 5),
+    "Ab:7", circshift(seventh_chord, 8),
+    "Ab:maj", circshift(major_chord, 8),
+    "C:min", circshift(minor_chord, 0),
+    "Eb:7", circshift(seventh_chord, 3),
+    "Eb:maj", circshift(major_chord, 3),
+    "G:min", circshift(minor_chord, 7),
+    "Bb:7", circshift(seventh_chord, 10),
+    "Bb:maj", circshift(major_chord, 10),
+    "D:min", circshift(minor_chord, 2),
+    "F:7", circshift(seventh_chord, 5),
+    "F:maj", circshift(major_chord, 5),
+    "A:min", circshift(minor_chord, 9),
+    "C:7", circshift(seventh_chord, 0),
+    "C:maj", circshift(major_chord, 0),
+    "E:min", circshift(minor_chord, 4),
+    "G:7", circshift(seventh_chord, 7),
+    "G:maj", circshift(major_chord, 7),
+    "B:min", circshift(minor_chord, 11),
+    "D:7", circshift(seventh_chord, 2),
+    "D:maj", circshift(major_chord, 2),
+    "F#:min", circshift(minor_chord, 6),
+    "A:7", circshift(seventh_chord, 9),
+    "A:maj", circshift(major_chord, 9),
+    "C#:min", circshift(minor_chord, 1),
+    "E:7", circshift(seventh_chord, 4),
+    "E:maj", circshift(major_chord, 4),
+    "G#:min", circshift(minor_chord, 8),
+    "B:7", circshift(seventh_chord, 11),
+    "B:maj", circshift(major_chord, 11),
+    "D#:min", circshift(minor_chord, 3)
+  )
+
+key_templates <-
+  tribble(
+    ~name, ~template,
+    "Gb:maj", circshift(major_key, 6),
+    "Bb:min", circshift(minor_key, 10),
+    "Db:maj", circshift(major_key, 1),
+    "F:min", circshift(minor_key, 5),
+    "Ab:maj", circshift(major_key, 8),
+    "C:min", circshift(minor_key, 0),
+    "Eb:maj", circshift(major_key, 3),
+    "G:min", circshift(minor_key, 7),
+    "Bb:maj", circshift(major_key, 10),
+    "D:min", circshift(minor_key, 2),
+    "F:maj", circshift(major_key, 5),
+    "A:min", circshift(minor_key, 9),
+    "C:maj", circshift(major_key, 0),
+    "E:min", circshift(minor_key, 4),
+    "G:maj", circshift(major_key, 7),
+    "B:min", circshift(minor_key, 11),
+    "D:maj", circshift(major_key, 2),
+    "F#:min", circshift(minor_key, 6),
+    "A:maj", circshift(major_key, 9),
+    "C#:min", circshift(minor_key, 1),
+    "E:maj", circshift(major_key, 4),
+    "G#:min", circshift(minor_key, 8),
+    "B:maj", circshift(major_key, 11),
+    "D#:min", circshift(minor_key, 3)
+  )
+
+
+snm <-
+  get_tidy_audio_analysis("0C4ejWmOTMv8vuYj85mf8m") |>
+  compmus_align(sections, segments) |>
+  select(sections) |>
+  unnest(sections) |>
+  mutate(
+    pitches =
+      map(segments,
+          compmus_summarise, pitches,
+          method = "mean", norm = "manhattan"
+      )
+  )
+
+
+snm |> 
+  compmus_match_pitch_template(
+    key_templates,         # Change to chord_templates if descired
+    method = "euclidean",  # Try different distance metrics
+    norm = "manhattan"     # Try different norms
+  ) |>
+  ggplot(
+    aes(x = start + duration / 2, width = duration, y = name, fill = d)
+  ) +
+  geom_tile() +
+  scale_fill_viridis_c(guide = "none") +
+  theme_minimal() +
+  labs(x = "Time (s)", y = "")
+```
+
+
+
+
+We found love{data-navmenu=Chordograms&Keys}
+===================================== 
+
+
+```{r}
+library(tidyverse)
+library(spotifyr)
+library(compmus)
+
+
+circshift <- function(v, n) {
+  if (n == 0) v else c(tail(v, n), head(v, -n))
+}
+
+#      C     C#    D     Eb    E     F     F#    G     Ab    A     Bb    B
+major_chord <-
+  c(   1,    0,    0,    0,    1,    0,    0,    1,    0,    0,    0,    0)
+minor_chord <-
+  c(   1,    0,    0,    1,    0,    0,    0,    1,    0,    0,    0,    0)
+seventh_chord <-
+  c(   1,    0,    0,    0,    1,    0,    0,    1,    0,    0,    1,    0)
+
+major_key <-
+  c(6.35, 2.23, 3.48, 2.33, 4.38, 4.09, 2.52, 5.19, 2.39, 3.66, 2.29, 2.88)
+minor_key <-
+  c(6.33, 2.68, 3.52, 5.38, 2.60, 3.53, 2.54, 4.75, 3.98, 2.69, 3.34, 3.17)
+
+chord_templates <-
+  tribble(
+    ~name, ~template,
+    "Gb:7", circshift(seventh_chord, 6),
+    "Gb:maj", circshift(major_chord, 6),
+    "Bb:min", circshift(minor_chord, 10),
+    "Db:maj", circshift(major_chord, 1),
+    "F:min", circshift(minor_chord, 5),
+    "Ab:7", circshift(seventh_chord, 8),
+    "Ab:maj", circshift(major_chord, 8),
+    "C:min", circshift(minor_chord, 0),
+    "Eb:7", circshift(seventh_chord, 3),
+    "Eb:maj", circshift(major_chord, 3),
+    "G:min", circshift(minor_chord, 7),
+    "Bb:7", circshift(seventh_chord, 10),
+    "Bb:maj", circshift(major_chord, 10),
+    "D:min", circshift(minor_chord, 2),
+    "F:7", circshift(seventh_chord, 5),
+    "F:maj", circshift(major_chord, 5),
+    "A:min", circshift(minor_chord, 9),
+    "C:7", circshift(seventh_chord, 0),
+    "C:maj", circshift(major_chord, 0),
+    "E:min", circshift(minor_chord, 4),
+    "G:7", circshift(seventh_chord, 7),
+    "G:maj", circshift(major_chord, 7),
+    "B:min", circshift(minor_chord, 11),
+    "D:7", circshift(seventh_chord, 2),
+    "D:maj", circshift(major_chord, 2),
+    "F#:min", circshift(minor_chord, 6),
+    "A:7", circshift(seventh_chord, 9),
+    "A:maj", circshift(major_chord, 9),
+    "C#:min", circshift(minor_chord, 1),
+    "E:7", circshift(seventh_chord, 4),
+    "E:maj", circshift(major_chord, 4),
+    "G#:min", circshift(minor_chord, 8),
+    "B:7", circshift(seventh_chord, 11),
+    "B:maj", circshift(major_chord, 11),
+    "D#:min", circshift(minor_chord, 3)
+  )
+
+key_templates <-
+  tribble(
+    ~name, ~template,
+    "Gb:maj", circshift(major_key, 6),
+    "Bb:min", circshift(minor_key, 10),
+    "Db:maj", circshift(major_key, 1),
+    "F:min", circshift(minor_key, 5),
+    "Ab:maj", circshift(major_key, 8),
+    "C:min", circshift(minor_key, 0),
+    "Eb:maj", circshift(major_key, 3),
+    "G:min", circshift(minor_key, 7),
+    "Bb:maj", circshift(major_key, 10),
+    "D:min", circshift(minor_key, 2),
+    "F:maj", circshift(major_key, 5),
+    "A:min", circshift(minor_key, 9),
+    "C:maj", circshift(major_key, 0),
+    "E:min", circshift(minor_key, 4),
+    "G:maj", circshift(major_key, 7),
+    "B:min", circshift(minor_key, 11),
+    "D:maj", circshift(major_key, 2),
+    "F#:min", circshift(minor_key, 6),
+    "A:maj", circshift(major_key, 9),
+    "C#:min", circshift(minor_key, 1),
+    "E:maj", circshift(major_key, 4),
+    "G#:min", circshift(minor_key, 8),
+    "B:maj", circshift(major_key, 11),
+    "D#:min", circshift(minor_key, 3)
+  )
+
+
+wefoundlove <-
+  get_tidy_audio_analysis("0U10zFw4GlBacOy9VDGfGL") |>
+  compmus_align(sections, segments) |>
+  select(sections) |>
+  unnest(sections) |>
+  mutate(
+    pitches =
+      map(segments,
+          compmus_summarise, pitches,
+          method = "mean", norm = "manhattan"
+      )
+  )
+
+
+wefoundlove |> 
+  compmus_match_pitch_template(
+    key_templates,         # Change to chord_templates if descired
+    method = "euclidean",  # Try different distance metrics
+    norm = "manhattan"     # Try different norms
+  ) |>
+  ggplot(
+    aes(x = start + duration / 2, width = duration, y = name, fill = d)
+  ) +
+  geom_tile() +
+  scale_fill_viridis_c(guide = "none") +
+  theme_minimal() +
+  labs(x = "Time (s)", y = "")
+  
+```
+
+
+
+Diamonds {data-navmenu=Chordograms&Keys}
+===================================== 
+
+
+
+```{r}
+library(tidyverse)
+library(spotifyr)
+library(compmus)
+
+
+circshift <- function(v, n) {
+  if (n == 0) v else c(tail(v, n), head(v, -n))
+}
+
+#      C     C#    D     Eb    E     F     F#    G     Ab    A     Bb    B
+major_chord <-
+  c(   1,    0,    0,    0,    1,    0,    0,    1,    0,    0,    0,    0)
+minor_chord <-
+  c(   1,    0,    0,    1,    0,    0,    0,    1,    0,    0,    0,    0)
+seventh_chord <-
+  c(   1,    0,    0,    0,    1,    0,    0,    1,    0,    0,    1,    0)
+
+major_key <-
+  c(6.35, 2.23, 3.48, 2.33, 4.38, 4.09, 2.52, 5.19, 2.39, 3.66, 2.29, 2.88)
+minor_key <-
+  c(6.33, 2.68, 3.52, 5.38, 2.60, 3.53, 2.54, 4.75, 3.98, 2.69, 3.34, 3.17)
+
+chord_templates <-
+  tribble(
+    ~name, ~template,
+    "Gb:7", circshift(seventh_chord, 6),
+    "Gb:maj", circshift(major_chord, 6),
+    "Bb:min", circshift(minor_chord, 10),
+    "Db:maj", circshift(major_chord, 1),
+    "F:min", circshift(minor_chord, 5),
+    "Ab:7", circshift(seventh_chord, 8),
+    "Ab:maj", circshift(major_chord, 8),
+    "C:min", circshift(minor_chord, 0),
+    "Eb:7", circshift(seventh_chord, 3),
+    "Eb:maj", circshift(major_chord, 3),
+    "G:min", circshift(minor_chord, 7),
+    "Bb:7", circshift(seventh_chord, 10),
+    "Bb:maj", circshift(major_chord, 10),
+    "D:min", circshift(minor_chord, 2),
+    "F:7", circshift(seventh_chord, 5),
+    "F:maj", circshift(major_chord, 5),
+    "A:min", circshift(minor_chord, 9),
+    "C:7", circshift(seventh_chord, 0),
+    "C:maj", circshift(major_chord, 0),
+    "E:min", circshift(minor_chord, 4),
+    "G:7", circshift(seventh_chord, 7),
+    "G:maj", circshift(major_chord, 7),
+    "B:min", circshift(minor_chord, 11),
+    "D:7", circshift(seventh_chord, 2),
+    "D:maj", circshift(major_chord, 2),
+    "F#:min", circshift(minor_chord, 6),
+    "A:7", circshift(seventh_chord, 9),
+    "A:maj", circshift(major_chord, 9),
+    "C#:min", circshift(minor_chord, 1),
+    "E:7", circshift(seventh_chord, 4),
+    "E:maj", circshift(major_chord, 4),
+    "G#:min", circshift(minor_chord, 8),
+    "B:7", circshift(seventh_chord, 11),
+    "B:maj", circshift(major_chord, 11),
+    "D#:min", circshift(minor_chord, 3)
+  )
+
+key_templates <-
+  tribble(
+    ~name, ~template,
+    "Gb:maj", circshift(major_key, 6),
+    "Bb:min", circshift(minor_key, 10),
+    "Db:maj", circshift(major_key, 1),
+    "F:min", circshift(minor_key, 5),
+    "Ab:maj", circshift(major_key, 8),
+    "C:min", circshift(minor_key, 0),
+    "Eb:maj", circshift(major_key, 3),
+    "G:min", circshift(minor_key, 7),
+    "Bb:maj", circshift(major_key, 10),
+    "D:min", circshift(minor_key, 2),
+    "F:maj", circshift(major_key, 5),
+    "A:min", circshift(minor_key, 9),
+    "C:maj", circshift(major_key, 0),
+    "E:min", circshift(minor_key, 4),
+    "G:maj", circshift(major_key, 7),
+    "B:min", circshift(minor_key, 11),
+    "D:maj", circshift(major_key, 2),
+    "F#:min", circshift(minor_key, 6),
+    "A:maj", circshift(major_key, 9),
+    "C#:min", circshift(minor_key, 1),
+    "E:maj", circshift(major_key, 4),
+    "G#:min", circshift(minor_key, 8),
+    "B:maj", circshift(major_key, 11),
+    "D#:min", circshift(minor_key, 3)
+  )
+
+
+diamonds <-
+  get_tidy_audio_analysis("5pDUMdIiW0rNLzFryqpC9j") |>
+  compmus_align(sections, segments) |>
+  select(sections) |>
+  unnest(sections) |>
+  mutate(
+    pitches =
+      map(segments,
+          compmus_summarise, pitches,
+          method = "mean", norm = "manhattan"
+      )
+  )
+
+
+diamonds |> 
+  compmus_match_pitch_template(
+    key_templates,         # Change to chord_templates if descired
+    method = "euclidean",  # Try different distance metrics
+    norm = "manhattan"     # Try different norms
+  ) |>
+  ggplot(
+    aes(x = start + duration / 2, width = duration, y = name, fill = d)
+  ) +
+  geom_tile() +
+  scale_fill_viridis_c(guide = "none") +
+  theme_minimal() +
+  labs(x = "Time (s)", y = "")
+```
+
+
+Work{data-navmenu=Chordograms&Keys}
+===================================== 
+
+
+
+```{r}
+library(tidyverse)
+library(spotifyr)
+library(compmus)
+
+
+circshift <- function(v, n) {
+  if (n == 0) v else c(tail(v, n), head(v, -n))
+}
+
+#      C     C#    D     Eb    E     F     F#    G     Ab    A     Bb    B
+major_chord <-
+  c(   1,    0,    0,    0,    1,    0,    0,    1,    0,    0,    0,    0)
+minor_chord <-
+  c(   1,    0,    0,    1,    0,    0,    0,    1,    0,    0,    0,    0)
+seventh_chord <-
+  c(   1,    0,    0,    0,    1,    0,    0,    1,    0,    0,    1,    0)
+
+major_key <-
+  c(6.35, 2.23, 3.48, 2.33, 4.38, 4.09, 2.52, 5.19, 2.39, 3.66, 2.29, 2.88)
+minor_key <-
+  c(6.33, 2.68, 3.52, 5.38, 2.60, 3.53, 2.54, 4.75, 3.98, 2.69, 3.34, 3.17)
+
+chord_templates <-
+  tribble(
+    ~name, ~template,
+    "Gb:7", circshift(seventh_chord, 6),
+    "Gb:maj", circshift(major_chord, 6),
+    "Bb:min", circshift(minor_chord, 10),
+    "Db:maj", circshift(major_chord, 1),
+    "F:min", circshift(minor_chord, 5),
+    "Ab:7", circshift(seventh_chord, 8),
+    "Ab:maj", circshift(major_chord, 8),
+    "C:min", circshift(minor_chord, 0),
+    "Eb:7", circshift(seventh_chord, 3),
+    "Eb:maj", circshift(major_chord, 3),
+    "G:min", circshift(minor_chord, 7),
+    "Bb:7", circshift(seventh_chord, 10),
+    "Bb:maj", circshift(major_chord, 10),
+    "D:min", circshift(minor_chord, 2),
+    "F:7", circshift(seventh_chord, 5),
+    "F:maj", circshift(major_chord, 5),
+    "A:min", circshift(minor_chord, 9),
+    "C:7", circshift(seventh_chord, 0),
+    "C:maj", circshift(major_chord, 0),
+    "E:min", circshift(minor_chord, 4),
+    "G:7", circshift(seventh_chord, 7),
+    "G:maj", circshift(major_chord, 7),
+    "B:min", circshift(minor_chord, 11),
+    "D:7", circshift(seventh_chord, 2),
+    "D:maj", circshift(major_chord, 2),
+    "F#:min", circshift(minor_chord, 6),
+    "A:7", circshift(seventh_chord, 9),
+    "A:maj", circshift(major_chord, 9),
+    "C#:min", circshift(minor_chord, 1),
+    "E:7", circshift(seventh_chord, 4),
+    "E:maj", circshift(major_chord, 4),
+    "G#:min", circshift(minor_chord, 8),
+    "B:7", circshift(seventh_chord, 11),
+    "B:maj", circshift(major_chord, 11),
+    "D#:min", circshift(minor_chord, 3)
+  )
+
+key_templates <-
+  tribble(
+    ~name, ~template,
+    "Gb:maj", circshift(major_key, 6),
+    "Bb:min", circshift(minor_key, 10),
+    "Db:maj", circshift(major_key, 1),
+    "F:min", circshift(minor_key, 5),
+    "Ab:maj", circshift(major_key, 8),
+    "C:min", circshift(minor_key, 0),
+    "Eb:maj", circshift(major_key, 3),
+    "G:min", circshift(minor_key, 7),
+    "Bb:maj", circshift(major_key, 10),
+    "D:min", circshift(minor_key, 2),
+    "F:maj", circshift(major_key, 5),
+    "A:min", circshift(minor_key, 9),
+    "C:maj", circshift(major_key, 0),
+    "E:min", circshift(minor_key, 4),
+    "G:maj", circshift(major_key, 7),
+    "B:min", circshift(minor_key, 11),
+    "D:maj", circshift(major_key, 2),
+    "F#:min", circshift(minor_key, 6),
+    "A:maj", circshift(major_key, 9),
+    "C#:min", circshift(minor_key, 1),
+    "E:maj", circshift(major_key, 4),
+    "G#:min", circshift(minor_key, 8),
+    "B:maj", circshift(major_key, 11),
+    "D#:min", circshift(minor_key, 3)
+  )
+
+
+work <-
+  get_tidy_audio_analysis("5gZsEYaYvyi1sAVyuiXbDm") |>
+  compmus_align(sections, segments) |>
+  select(sections) |>
+  unnest(sections) |>
+  mutate(
+    pitches =
+      map(segments,
+          compmus_summarise, pitches,
+          method = "mean", norm = "manhattan"
+      )
+  )
+
+
+work |> 
+  compmus_match_pitch_template(
+    key_templates,         # Change to chord_templates if descired
+    method = "euclidean",  # Try different distance metrics
+    norm = "manhattan"     # Try different norms
+  ) |>
+  ggplot(
+    aes(x = start + duration / 2, width = duration, y = name, fill = d)
+  ) +
+  geom_tile() +
+  scale_fill_viridis_c(guide = "none") +
+  theme_minimal() +
+  labs(x = "Time (s)", y = "")
+```
+
+
+
+
+Information {data-navmenu=Chordograms&Keys}
+===================================== 
+
+The information is presented due to issues with visualization(size), which would hopefully be resolved soon. 
+
+
+
+"Pon de Replay" by Rihanna is a popular dancehall-influenced pop song. The song is primarily in the key of B-flat minor, with a tempo of approximately 100 beats per minute.The chord progression in the song is relatively simple and features a repeating pattern of three chords throughout most of the song. The chords used in "Pon de Replay" are Bb minor, Eb minor, and F# major.
+
+"Unfaithful" by Rihanna is a pop ballad that features a piano-based accompaniment with a simple yet powerful harmonic structure. The song is primarily in the key of C minor, with a tempo of approximately 90 beats per minute.The chord progression in "Unfaithful" is relatively simple, featuring a repeating pattern of four chords throughout the song. The chords used in "Unfaithful" are C minor, Bb major, Ab major, and G major.
+
+
+"Umbrella" by Rihanna is a pop song with R&B and hip-hop influences. The song is primarily in the key of C# minor, with a tempo of approximately 87 beats per minute.The chord progression in "Umbrella" is relatively simple, featuring a repeating pattern of three chords throughout most of the song. The chords used in "Umbrella" are C# minor, B major, and A major.
+
+
+"Rude Boy" by Rihanna is a dancehall and reggae-influenced pop song. The song is primarily in the key of B minor, with a tempo of approximately 87 beats per minute.The chord progression in "Rude Boy" is relatively simple, featuring a repeating pattern of four chords throughout most of the song. The chords used in "Rude Boy" are B minor, D major, G major, and A major.
+
+
+"S&M" by Rihanna is an electro-pop and dance-pop song with influences from house and techno music. The song is primarily in the key of E-flat major, with a tempo of approximately 128 beats per minute.The chord progression in "S&M" is relatively simple, featuring a repeating pattern of four chords throughout most of the song. The chords used in "S&M" are E-flat major, B-flat major, C minor, and G minor.
+
+
+"We Found Love" by Rihanna is an upbeat dance-pop and EDM song with influences from house and techno music. The song is primarily in the key of G major, with a tempo of approximately 128 beats per minute.The chord progression in "We Found Love" is relatively simple, featuring a repeating pattern of four chords throughout most of the song. The chords used in "We Found Love" are G major, D major, Em, and C major.
+
+
+"Diamonds" by Rihanna is a mid-tempo pop ballad with a prominent piano riff and a chorus that features electronic beats. The song is primarily in the key of B-flat major, with a tempo of approximately 92 beats per minute.The chord progression in "Diamonds" is relatively simple, featuring a repeating pattern of four chords throughout most of the song. The chords used in "Diamonds" are B-flat major, G minor, E-flat major, and F major.
+
+
+"Work" by Rihanna is a dancehall-inspired pop song with a prominent beat and lyrics. The song is primarily in the key of A minor, with a tempo of approximately 92 beats per minute.The chord progression in "Work" is relatively simple, featuring a repeating pattern of four chords throughout most of the song. The chords used in "Work" are A minor, E minor, D major, and F major.
