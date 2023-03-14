@@ -4,17 +4,56 @@ output:
   flexdashboard::flex_dashboard:
     orientation: columns
     vertical_layout: fill
+    
 ---
+
+Inspiration {.storyboard}
+=========================================
 
 ```{r setup, include=FALSE}
 library(flexdashboard)
+library(tidyverse)
+library(spotifyr)
+library(ggplot2)
 library(cowplot)
 ```
+
+
+-----------------------------------------------------------------------
+
+### Popularity of Albums
+
+
+```{r}
+library(tidyverse)
+library(spotifyr)
+album_ids <- c('4UlGauD7ROb3YbVOFMgW5u', '4FyGpObwABjn0o8Tdp7AZz', '5pvFhFt1nzE8sCbm1wjNRv','3JSWZWeTHF4HDGt5Eozdy7','4XBfFj0WYyh5mBtU61EdyY', '1Kw1bVd07oRqcjrcjQKC8T','7vN82vd1Vq44fjlhjfvHJp')
+albums <- get_albums(album_ids)
+album_names <- albums$name
+album_popularity <- albums$popularity
+album_data <- data.frame(album_names, album_popularity)
+library(ggplot2)
+ggplot(album_data, aes(x = album_names, y = album_popularity)) + 
+  geom_bar(stat = "identity", fill = "skyblue") + 
+  xlab("Album") + ylab("Popularity") + 
+  ggtitle("Popularity of all of Rihanna's albums from 2005 to 2016") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+---------------------------------------------------------
+
+Rihanna is a highly successful musician who has released numerous albums throughout her career. Her popularity can be attributed to her unique voice, catchy tunes, and her ability to continually reinvent her sound and image.
+
+Some of her most popular albums include "Good Girl Gone Bad" (2007), "Loud" (2010), "Talk That Talk" (2011), "Unapologetic" (2012), and "Anti" (2016). "Good Girl Gone Bad" is often cited as the album that propelled Rihanna to superstardom, featuring hit singles such as "Umbrella" and "Don't Stop the Music". "Loud" was another highly successful album, featuring the chart-topping hits "Only Girl (In the World)" and "What's My Name?".
+
+Rihanna's albums have been well received by both fans and critics. Her unique sound and style have helped her stand out in a crowded music industry, and her ability to collaborate with other artists has also helped her gain more exposure. In addition to her successful music career, Rihanna has also made a name for herself in other areas, such as fashion and beauty.
+
+
 
 Cepstrograms and Self-Similarity Matrices
 =====================================  
 
-##Pon de Replay
+###Pon de Replay
 Features of Rihanna's Pon de Replay Intro (0:00-0:11): The song begins with a brief intro featuring a repeating synth melody and Rihanna's vocals. Verse 1 (0:11-0:33): The first verse begins with Rihanna's vocals over a sparse beat, building to a more intense chorus. Chorus 1 (0:33-0:56): The first chorus features Rihanna's catchy hook "Come Mr. DJ song pon de replay," over a driving beat. Verse 2 (0:56-1:17): The second verse features a similar structure to the first verse, building to the second chorus. Chorus 2 (1:17-1:41): The second chorus is a repeat of the first chorus. Bridge (1:41-2:02): The bridge provides a contrast to the chorus, featuring a different melody and lyrics Chorus 3 (2:02-2:26): The third chorus is a repeat of the first two choruses, with a few variations in the instrumentation. Outro (2:26-3:18): The song ends with a fade-out of the chorus, featuring Rihanna's vocals and a repeating synth melody.
 
 Overall, the arrangement of "Pon de Replay" follows a traditional pop song structure, with an intro, verses, chorus, bridge, and outro, with each section building on the previous one to create a dynamic and engaging song.
@@ -78,11 +117,13 @@ bzt |>
   labs(x = "", y = "")
 ```
 
-##Unfaithful
+###Unfaithful
 
 Intro (0:00-0:19): The song begins with a slow and mournful piano melody, which sets the tone for the emotional lyrics that follow. Verse 1 (0:19-0:41): The first verse begins with Rihanna's vocals over a simple piano accompaniment, building to a more intense chorus. Chorus 1 (0:41-1:02): The first chorus features Rihanna's emotive vocals over a more layered and complex instrumental accompaniment. Verse 2 (1:02-1:24): The second verse features a similar structure to the first verse, building to the second chorus. Chorus 2 (1:24-1:45): The second chorus is a repeat of the first chorus, with slight variations in the instrumentation and vocal delivery. Bridge (1:45-2:06): The bridge provides a contrast to the chorus, featuring a different melody and lyrics, as Rihanna sings "I don't wanna be the reason why / Every time I walk out the door / I see him die a little more inside." Chorus 3 (2:06-2:27): The third chorus is a repeat of the first two choruses, with a few variations in the instrumentation. Outro (2:27-3:51): The song ends with a repetition of the intro's piano melody, with Rihanna's vocals fading out.
 
 Overall, the arrangement of "Unfaithful" follows a traditional pop ballad structure, with an intro, verses, choruses, and a bridge, with each section building on the previous one to create a dynamic and emotional song.\
+
+
 
 ```{r}
 mpt <-
@@ -139,7 +180,7 @@ mpt |>
   labs(x = "", y = "")
 ```
 
-##Umbrella
+###Umbrella
 
 Intro (0:00-0:10): The song begins with a synth chord progression and a simple drum pattern. Verse 1 (0:10-0:43): The first verse features Rihanna's vocals over a sparse instrumental accompaniment, building to a pre-chorus. Pre-chorus (0:43-1:02): The pre-chorus begins with a slightly more intense instrumental accompaniment. Chorus 1 (1:02-1:32): The first chorus features a catchy and repetitive melody, with Rihanna's vocals over a layered and upbeat instrumental accompaniment. Verse 2 (1:32-2:06): The second verse is similar to the first verse, but with slight variations in the instrumentation and vocal delivery. Pre-chorus (2:06-2:25): The pre-chorus is repeated, leading into the second chorus. Chorus 2 (2:25-2:56): The second chorus is a repeat of the first chorus, but with some variations in the instrumentation and vocal ad-libs. Bridge (2:56-3:18): The bridge provides a contrast to the chorus, with a slower tempo and a different chord progression. Rihanna sings "You can run into my arms / It's okay, don't be alarmed / Come into me / There's no distance in between our love." Chorus 3 (3:18-3:49): The third chorus is a repeat of the first two choruses, with additional vocal ad-libs and harmonies. Outro (3:49-4:13): The song ends with a repetition of the chorus and an instrumental fade-out.
 
@@ -198,7 +239,7 @@ llt |>
   labs(x = "", y = "")
 ```
 
-##Rude boy
+###Rude boy
 
 Intro (0:00-0:11): The song starts with a drum loop, a synth riff, and Rihanna's vocals. Verse 1 (0:11-0:43): The first verse features Rihanna's vocals over a sparse instrumental accompaniment, building to a pre-chorus. Pre-chorus (0:43-0:59): Starts with a more intense instrumental accompaniment. Chorus 1 (0:59-1:30): The first chorus features a catchy and repetitive melody, with Rihanna's vocals over a layered and upbeat instrumental accompaniment. Verse 2 (1:30-2:03): The second verse is similar to the first verse, but with some variations in the instrumentation and vocal delivery. Pre-chorus (2:03-2:19): The pre-chorus is repeated, leading into the second chorus. Chorus 2 (2:19-2:50): The second chorus is a repeat of the first chorus, but with some variations in the instrumentation and vocal ad-libs. Bridge (2:50-3:12): The bridge provides a contrast to the chorus, with a slower tempo and a different chord progression. Rihanna sings "Come here rude boy, boy, can you get it up? / Come here rude boy, boy, is you big enough? / Take it, take it, baby, baby / Take it, take it, love me, love me." Chorus 3 (3:12-3:43): The third chorus is a repeat of the first two choruses, with additional vocal ad-libs and harmonies. Outro (3:43-3:57): The song ends with a repetition of the chorus and an instrumental fade-out.
 
@@ -259,7 +300,7 @@ jkt |>
   labs(x = "", y = "")
 ```
 
-##S&M
+###S&M
 
 Verse 2 (1:33-2:05): The second verse is similar to the first verse, but with some variations in the instrumentation and vocal delivery. Pre-chorus (2:05-2:21): The pre-chorus is repeated, leading into the second chorus. Chorus 2 (2:21-2:51): The second chorus is a repeat of the first chorus, but with some variations in the instrumentation and vocal ad-libs. Bridge (2:51-3:23): The bridge provides a contrast to the chorus, with a slower tempo and a different chord progression. Chorus 3 (3:23-3:53): The third chorus is a repeat of the first two choruses, with additional vocal ad-libs and harmonies. Outro (3:53-4:16): The song ends with a repetition of the chorus and an instrumental fade-out.
 
@@ -511,356 +552,9 @@ Intro (0:00-0:13): The song starts with a repeating instrumental riff and Rihann
 
 Overall, the arrangement of "Work" follows a non-traditional pop song structure, with an intro, verses, pre-choruses, choruses, and a bridge. The song features variations, such as the use of Jamaican Patois in the verses and the dancehall-inspired instrumental accompaniment. The bridge adds to the dynamic and memorable quality of the song by providing a contrast to the chorus.
 
-Popularity of Albums 
-=====================================  
-
-##Chart Popularirty of all Rihanna's album from 2005 they 2016
-
-```{r}
-library(tidyverse)
-library(spotifyr)
-album_ids <- c('4UlGauD7ROb3YbVOFMgW5u', '4FyGpObwABjn0o8Tdp7AZz', '5pvFhFt1nzE8sCbm1wjNRv','3JSWZWeTHF4HDGt5Eozdy7','4XBfFj0WYyh5mBtU61EdyY', '1Kw1bVd07oRqcjrcjQKC8T','7vN82vd1Vq44fjlhjfvHJp')
-albums <- get_albums(album_ids)
-album_names <- albums$name
-album_popularity <- albums$popularity
-album_data <- data.frame(album_names, album_popularity)
-library(ggplot2)
-ggplot(album_data, aes(x = album_names, y = album_popularity)) + 
-  geom_bar(stat = "identity", fill = "skyblue") + 
-  xlab("Album") + ylab("Popularity") + 
-  ggtitle("Popularity of all of Rihanna's albums from 2005 to 2016") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-```
-
-
-Albums
-==============================
-
-
-##MUSIC OF THE SUN 2005
-```{r}
-library(spotifyr)
-library(dplyr)
-library(tidyr)
-library(ggplot2)
-library(ggpubr)
-
-# Get the album object for "Music of the Sun" by Rihanna
-mot_album <- get_album("4FyGpObwABjn0o8Tdp7AZz")
-
-# Get the tracks for the album
-mot_tracks <- get_album_tracks(mot_album$id)
-
-# Loop through each track and create a plot
-for (i in 1:nrow(mot_tracks)) {
-  # Get the audio features for the current track
-  track_audio_features <- get_track_audio_features(mot_tracks$id[i])
-  
-  # Convert the data to a long format
-  track_audio_features_long <- track_audio_features %>%
-    pivot_longer(cols = c(acousticness, danceability, energy, instrumentalness, liveness, loudness, speechiness, valence),
-                 names_to = "audio_feature",
-                 values_to = "value")
-  
-  # Create the plot for the current track
-  p <- ggplot(track_audio_features_long, aes(x = value, y = audio_feature)) +
-    geom_point(size = 5, color = "green") +
-    theme_bw() +
-    labs(title = mot_tracks$name[i],
-         x = "Audio Feature Value",
-         y = "Audio Feature")
-  
-  # Print the plot
-  print(p)
-
-}
-```
-
-### A GIRL LIKE ME 2006 
-
-```{r}
-library(spotifyr)
-library(dplyr)
-library(tidyr)
-library(ggplot2)
-library(ggpubr)
-
-# Get the album object for "Music of the Sun" by Rihanna
-mot_album <- get_album("5pvFhFt1nzE8sCbm1wjNRv")
-
-# Get the tracks for the album
-mot_tracks <- get_album_tracks(mot_album$id)
-
-# Loop through each track and create a plot
-for (i in 1:nrow(mot_tracks)) {
-  # Get the audio features for the current track
-  track_audio_features <- get_track_audio_features(mot_tracks$id[i])
-  
-  # Convert the data to a long format
-  track_audio_features_long <- track_audio_features %>%
-    pivot_longer(cols = c(acousticness, danceability, energy, instrumentalness, liveness, loudness, speechiness, valence),
-                 names_to = "audio_feature",
-                 values_to = "value")
-  
-  # Create the plot for the current track
-  p <- ggplot(track_audio_features_long, aes(x = value, y = audio_feature)) +
-    geom_point(size = 5, color = "green") +
-    theme_bw() +
-    labs(title = mot_tracks$name[i],
-         x = "Audio Feature Value",
-         y = "Audio Feature")
-  
-  # Print the plot
-  print(p)
-}
-```
-
-###GOOD GIRL GONE BAD 2008  
-
-```{r}
-library(spotifyr)
-library(dplyr)
-library(tidyr)
-library(ggplot2)
-library(ggpubr)
-
-# Get the album object for "Music of the Sun" by Rihanna
-mot_album <- get_album("3JSWZWeTHF4HDGt5Eozdy7")
-
-# Get the tracks for the album
-mot_tracks <- get_album_tracks(mot_album$id)
-
-# Loop through each track and create a plot
-for (i in 1:nrow(mot_tracks)) {
-  # Get the audio features for the current track
-  track_audio_features <- get_track_audio_features(mot_tracks$id[i])
-  
-  # Convert the data to a long format
-  track_audio_features_long <- track_audio_features %>%
-    pivot_longer(cols = c(acousticness, danceability, energy, instrumentalness, liveness, loudness, speechiness, valence),
-                 names_to = "audio_feature",
-                 values_to = "value")
-  
-  # Create the plot for the current track
-  p <- ggplot(track_audio_features_long, aes(x = value, y = audio_feature)) +
-    geom_point(size = 5, color = "green") +
-    theme_bw() +
-    labs(title = mot_tracks$name[i],
-         x = "Audio Feature Value",
-         y = "Audio Feature")
-  
-  # Print the plot
-  print(p)
-}
-```
-
-
-###RATED R 2009 
-
-```{r}
-library(spotifyr)
-library(dplyr)
-library(tidyr)
-library(ggplot2)
-library(ggpubr)
-
-# Get the album object for "Music of the Sun" by Rihanna
-mot_album <- get_album("7uGmyYwDFJbSc1xs4hkEs2")
-
-# Get the tracks for the album
-mot_tracks <- get_album_tracks(mot_album$id)
-
-# Loop through each track and create a plot
-for (i in 1:nrow(mot_tracks)) {
-  # Get the audio features for the current track
-  track_audio_features <- get_track_audio_features(mot_tracks$id[i])
-  
-  # Convert the data to a long format
-  track_audio_features_long <- track_audio_features %>%
-    pivot_longer(cols = c(acousticness, danceability, energy, instrumentalness, liveness, loudness, speechiness, valence),
-                 names_to = "audio_feature",
-                 values_to = "value")
-  
-  # Create the plot for the current track
-  p <- ggplot(track_audio_features_long, aes(x = value, y = audio_feature)) +
-    geom_point(size = 5, color = "green") +
-    theme_bw() +
-    labs(title = mot_tracks$name[i],
-         x = "Audio Feature Value",
-         y = "Audio Feature")
-  
-  # Print the plot
-  print(p)
-
-}
-```
-
-###Loud
-
-```{r}
-library(spotifyr)
-library(dplyr)
-library(tidyr)
-library(ggplot2)
-library(ggpubr)
-
-# Get the album object for "Music of the Sun" by Rihanna
-newt_album <- get_album("7vN82vd1Vq44fjlhjfvHJp")
-
-# Get the tracks for the album
-newt_tracks <- get_album_tracks(mot_album$id)
-
-# Loop through each track and create a plot
-for (i in 1:nrow(newt_tracks)) {
-  # Get the audio features for the current track
-  track_audio_features <- get_track_audio_features(newt_tracks$id[i])
-  
-  # Convert the data to a long format
-  track_audio_features_long <- track_audio_features %>%
-    pivot_longer(cols = c(acousticness, danceability, energy, instrumentalness, liveness, loudness, speechiness, valence),
-                 names_to = "audio_feature",
-                 values_to = "value")
-  
-  # Create the plot for the current track
-  p <- ggplot(track_audio_features_long, aes(x = value, y = audio_feature)) +
-    geom_point(size = 5, color = "green") +
-    theme_bw() +
-    labs(title = newt_tracks$name[i],
-         x = "Audio Feature Value",
-         y = "Audio Feature")
-  
-  # Print the plot
-  print(p)
-
-}
-```
-
-
-###TALK THAT TALK 2011 
-```{r}
-library(spotifyr)
-library(dplyr)
-library(tidyr)
-library(ggplot2)
-library(ggpubr)
-
-# Get the album object for "Music of the Sun" by Rihanna
-newp_album <- get_album("1Kw1bVd07oRqcjrcjQKC8T")
-
-# Get the tracks for the album
-newp_tracks <- get_album_tracks(newp_album$id)
-
-# Loop through each track and create a plot
-for (i in 1:nrow(newp_tracks)) {
-  # Get the audio features for the current track
-  track_audio_features <- get_track_audio_features(newp_tracks$id[i])
-  
-  # Convert the data to a long format
-  track_audio_features_long <- track_audio_features %>%
-    pivot_longer(cols = c(acousticness, danceability, energy, instrumentalness, liveness, loudness, speechiness, valence),
-                 names_to = "audio_feature",
-                 values_to = "value")
-  
-  # Create the plot for the current track
-  p <- ggplot(track_audio_features_long, aes(x = value, y = audio_feature)) +
-    geom_point(size = 5, color = "green") +
-    theme_bw() +
-    labs(title = newt_tracks$name[i],
-         x = "Audio Feature Value",
-         y = "Audio Feature")
-  
-  # Print the plot
-  print(p)
-
-}
-```
-
-###UNAPOLOGETIC 2012 
-
-```{r}
-library(spotifyr)
-library(dplyr)
-library(tidyr)
-library(ggplot2)
-library(ggpubr)
-
-# Get the album object for "Music of the Sun" by Rihanna
-unap_album <- get_album("4XBfFj0WYyh5mBtU61EdyY")
-
-# Get the tracks for the album
-unap_tracks <- get_album_tracks(unap_album$id)
-
-# Loop through each track and create a plot
-for (i in 1:nrow(newt_tracks)) {
-  # Get the audio features for the current track
-  track_audio_features <- get_track_audio_features(unap_tracks$id[i])
-  
-  # Convert the data to a long format
-  track_audio_features_long <- track_audio_features %>%
-    pivot_longer(cols = c(acousticness, danceability, energy, instrumentalness, liveness, loudness, speechiness, valence),
-                 names_to = "audio_feature",
-                 values_to = "value")
-  
-  # Create the plot for the current track
-  p <- ggplot(track_audio_features_long, aes(x = value, y = audio_feature)) +
-    geom_point(size = 5, color = "green") +
-    theme_bw() +
-    labs(title = newt_tracks$name[i],
-         x = "Audio Feature Value",
-         y = "Audio Feature")
-  
-  # Print the plot
-  print(p)
-
-}
-```
-
-###ANTI 2016 
-
-```{r}
-library(spotifyr)
-library(dplyr)
-library(tidyr)
-library(ggplot2)
-library(ggpubr)
-
-# Get the album object for "Music of the Sun" by Rihanna
-anti_album <- get_album("48i37aZTC1prDr4EcpQeEa")
-
-# Get the tracks for the album
-anti_tracks <- get_album_tracks(anti_album$id)
-
-# Loop through each track and create a plot
-for (i in 1:nrow(anti_tracks)) {
-  # Get the audio features for the current track
-  track_audio_features <- get_track_audio_features(anti_tracks$id[i])
-  
-  # Convert the data to a long format
-  track_audio_features_long <- track_audio_features %>%
-    pivot_longer(cols = c(acousticness, danceability, energy, instrumentalness, liveness, loudness, speechiness, valence),
-                 names_to = "audio_feature",
-                 values_to = "value")
-  
-  # Create the plot for the current track
-  p <- ggplot(track_audio_features_long, aes(x = value, y = audio_feature)) +
-    geom_point(size = 5, color = "green") +
-    theme_bw() +
-    labs(title = anti_tracks$name[i],
-         x = "Audio Feature Value",
-         y = "Audio Feature")
-  
-  # Print the plot
-  print(p)
-
-}
-
-```
-
 Chromatograms
 =====================================  
-Chromatograms of the most streamed songs of Rihanna per album 
-
-
+###Chromatograms of the most streamed songs of Rihanna per album 
 
 ```{r}
 
@@ -1084,7 +778,7 @@ where |>
 
 
 
-Pon de replay{data-navmenu=Chordograms&Keys}
+Pon de replay
 ===================================== 
 
 ```{r}
@@ -1210,10 +904,10 @@ pondereplay |>
 
 ```
 
+-----------------------------
 
 
-
-Unfaithful{data-navmenu=Chordograms&Keys}
+Unfaithful
 ===================================== 
 
 
@@ -1342,7 +1036,7 @@ unfaith |>
 
 
 
-Umbrella{data-navmenu=Chordograms&Keys}
+Umbrella
 ===================================== 
 
 
@@ -1472,7 +1166,7 @@ umbrella |>
 
 
 
-Rude Boy{data-navmenu=Chordograms&Keys}
+Rude Boy
 ===================================== 
 
 
@@ -1600,7 +1294,7 @@ rudeboy |>
 
 
 
-S&M{data-navmenu=Chordograms&Keys}
+S&M
 ===================================== 
 
 
@@ -1729,7 +1423,7 @@ snm |>
 
 
 
-We found love{data-navmenu=Chordograms&Keys}
+We found love 
 ===================================== 
 
 
@@ -1858,7 +1552,7 @@ wefoundlove |>
 
 
 
-Diamonds {data-navmenu=Chordograms&Keys}
+Diamonds
 ===================================== 
 
 
@@ -1986,7 +1680,7 @@ diamonds |>
 ```
 
 
-Work{data-navmenu=Chordograms&Keys}
+Work
 ===================================== 
 
 
@@ -2113,13 +1807,19 @@ work |>
   labs(x = "Time (s)", y = "")
 ```
 
+--------------------------------------
+
+"Work" by Rihanna is a dancehall-inspired pop song with a prominent beat and lyrics. The song is primarily in the key of A minor, with a tempo of approximately 92 beats per minute.The chord progression in "Work" is relatively simple, featuring a repeating pattern of four chords throughout most of the song. The chords used in "Work" are A minor, E minor, D major, and F major.   
 
 
 
-Information {data-navmenu=Chordograms&Keys}
+Information 
 ===================================== 
 
-The information is presented due to issues with visualization(size), which would hopefully be resolved soon. 
+
+
+ 
+ The information is presented due to issues with visualization(size), which would hopefully be resolved soon. 
 
 
 
@@ -2143,4 +1843,9 @@ The information is presented due to issues with visualization(size), which would
 "Diamonds" by Rihanna is a mid-tempo pop ballad with a prominent piano riff and a chorus that features electronic beats. The song is primarily in the key of B-flat major, with a tempo of approximately 92 beats per minute.The chord progression in "Diamonds" is relatively simple, featuring a repeating pattern of four chords throughout most of the song. The chords used in "Diamonds" are B-flat major, G minor, E-flat major, and F major.
 
 
-"Work" by Rihanna is a dancehall-inspired pop song with a prominent beat and lyrics. The song is primarily in the key of A minor, with a tempo of approximately 92 beats per minute.The chord progression in "Work" is relatively simple, featuring a repeating pattern of four chords throughout most of the song. The chords used in "Work" are A minor, E minor, D major, and F major.
+"Work" by Rihanna is a dancehall-inspired pop song with a prominent beat and lyrics. The song is primarily in the key of A minor, with a tempo of approximately 92 beats per minute.The chord progression in "Work" is relatively simple, featuring a repeating pattern of four chords throughout most of the song. The chords used in "Work" are A minor, E minor, D major, and F major.   
+### Chart 1
+    
+```{r}
+```
+   
