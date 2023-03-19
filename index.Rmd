@@ -2,13 +2,12 @@
 title: "Rihanna's evolution"
 output: 
   flexdashboard::flex_dashboard:
+    theme: journal
     orientation: columns
     vertical_layout: fill
     
+    
 ---
-
-Inspiration {.storyboard}
-=========================================
 
 ```{r setup, include=FALSE}
 library(flexdashboard)
@@ -18,6 +17,9 @@ library(ggplot2)
 library(cowplot)
 ```
 
+
+Inspiration {.storyboard}
+=========================================
 
 -----------------------------------------------------------------------
 
@@ -48,17 +50,16 @@ Some of her most popular albums include "Good Girl Gone Bad" (2007), "Loud" (201
 
 Rihanna's albums have been well received by both fans and critics. Her unique sound and style have helped her stand out in a crowded music industry, and her ability to collaborate with other artists has also helped her gain more exposure. In addition to her successful music career, Rihanna has also made a name for herself in other areas, such as fashion and beauty.
 
+Chromatograms and self-similarity matrices{.storyboard}
+=========================================
+
+-----------------------------------------------------------------------
 
 
-Cepstrograms and Self-Similarity Matrices
-=====================================  
+### Pon de Replay
 
-###Pon de Replay
-Features of Rihanna's Pon de Replay Intro (0:00-0:11): The song begins with a brief intro featuring a repeating synth melody and Rihanna's vocals. Verse 1 (0:11-0:33): The first verse begins with Rihanna's vocals over a sparse beat, building to a more intense chorus. Chorus 1 (0:33-0:56): The first chorus features Rihanna's catchy hook "Come Mr. DJ song pon de replay," over a driving beat. Verse 2 (0:56-1:17): The second verse features a similar structure to the first verse, building to the second chorus. Chorus 2 (1:17-1:41): The second chorus is a repeat of the first chorus. Bridge (1:41-2:02): The bridge provides a contrast to the chorus, featuring a different melody and lyrics Chorus 3 (2:02-2:26): The third chorus is a repeat of the first two choruses, with a few variations in the instrumentation. Outro (2:26-3:18): The song ends with a fade-out of the chorus, featuring Rihanna's vocals and a repeating synth melody.
 
-Overall, the arrangement of "Pon de Replay" follows a traditional pop song structure, with an intro, verses, chorus, bridge, and outro, with each section building on the previous one to create a dynamic and engaging song.
-
-```{r}
+```{r,fig.width=9, fig.height=6}
 library(tidyverse)
 library(spotifyr)
 library(compmus)
@@ -117,15 +118,13 @@ bzt |>
   labs(x = "", y = "")
 ```
 
-###Unfaithful
+-----------------------------------------------------------------------
 
-Intro (0:00-0:19): The song begins with a slow and mournful piano melody, which sets the tone for the emotional lyrics that follow. Verse 1 (0:19-0:41): The first verse begins with Rihanna's vocals over a simple piano accompaniment, building to a more intense chorus. Chorus 1 (0:41-1:02): The first chorus features Rihanna's emotive vocals over a more layered and complex instrumental accompaniment. Verse 2 (1:02-1:24): The second verse features a similar structure to the first verse, building to the second chorus. Chorus 2 (1:24-1:45): The second chorus is a repeat of the first chorus, with slight variations in the instrumentation and vocal delivery. Bridge (1:45-2:06): The bridge provides a contrast to the chorus, featuring a different melody and lyrics, as Rihanna sings "I don't wanna be the reason why / Every time I walk out the door / I see him die a little more inside." Chorus 3 (2:06-2:27): The third chorus is a repeat of the first two choruses, with a few variations in the instrumentation. Outro (2:27-3:51): The song ends with a repetition of the intro's piano melody, with Rihanna's vocals fading out.
+Intro (0:00-0:11): The song begins with a brief intro featuring a repeating melody and Rihanna's vocals. Verse 1 (0:11-0:33): The first verse begins with Rihanna's vocals over a sparse beat, building to a more intense chorus. Chorus 1 (0:33-0:56): The first chorus features Rihanna's catchy hook " Come Mr. DJ song pon de replay," over a driving beat. Verse 2 (0:56-1:17): The second verse features a similar structure to the first verse, building to the second chorus. Chorus 2 (1:17-1:41): The second chorus is a repeat of the first chorus. Bridge (1:41-2:02): The bridge provides a contrast to the chorus, featuring a different melody and lyrics Chorus 3 (2:02-2:26): The third chorus is a repeat of the first two choruses, with a few variations in the instrumentation. Outro (2:26-3:18): The song ends with a fade-out of the chorus, featuring Rihanna's vocals and a repeating synth melody.
 
-Overall, the arrangement of "Unfaithful" follows a traditional pop ballad structure, with an intro, verses, choruses, and a bridge, with each section building on the previous one to create a dynamic and emotional song.\
+### Unfaithful
 
-
-
-```{r}
+```{r,fig.width=9, fig.height=6}
 mpt <-
   get_tidy_audio_analysis("13xxBnXOuiBxVxJI458B0i") |> # Change URI.
   compmus_align(bars, segments) |>                     # Change `bars`
@@ -180,11 +179,13 @@ mpt |>
   labs(x = "", y = "")
 ```
 
-###Umbrella
+-------------------------------------------------------------------
 
-Intro (0:00-0:10): The song begins with a synth chord progression and a simple drum pattern. Verse 1 (0:10-0:43): The first verse features Rihanna's vocals over a sparse instrumental accompaniment, building to a pre-chorus. Pre-chorus (0:43-1:02): The pre-chorus begins with a slightly more intense instrumental accompaniment. Chorus 1 (1:02-1:32): The first chorus features a catchy and repetitive melody, with Rihanna's vocals over a layered and upbeat instrumental accompaniment. Verse 2 (1:32-2:06): The second verse is similar to the first verse, but with slight variations in the instrumentation and vocal delivery. Pre-chorus (2:06-2:25): The pre-chorus is repeated, leading into the second chorus. Chorus 2 (2:25-2:56): The second chorus is a repeat of the first chorus, but with some variations in the instrumentation and vocal ad-libs. Bridge (2:56-3:18): The bridge provides a contrast to the chorus, with a slower tempo and a different chord progression. Rihanna sings "You can run into my arms / It's okay, don't be alarmed / Come into me / There's no distance in between our love." Chorus 3 (3:18-3:49): The third chorus is a repeat of the first two choruses, with additional vocal ad-libs and harmonies. Outro (3:49-4:13): The song ends with a repetition of the chorus and an instrumental fade-out.
+Intro (0:00-0:19): The song begins with a slow and mournful piano melody, which sets the tone for the emotional lyrics that follow. Verse 1 (0:19-0:41): The first verse begins with Rihanna's vocals over a simple piano accompaniment, building to a more intense chorus. Chorus 1 (0:41-1:02): The first chorus features Rihanna's emotive vocals over a more layered and complex instrumental accompaniment. Verse 2 (1:02-1:24): The second verse features a similar structure to the first verse, building to the second chorus. Chorus 2 (1:24-1:45): The second chorus is a repeat of the first chorus, with slight variations in the instrumentation and vocal delivery. Bridge (1:45-2:06): The bridge provides a contrast to the chorus, featuring a different melody and lyrics, as Rihanna sings "I don't wanna be the reason why / Every time I walk out the door / I see him die a little more inside." Chorus 3 (2:06-2:27): The third chorus is a repeat of the first two choruses, with a few variations in the instrumentation. Outro (2:27-3:51): The song ends with a repetition of the intro's piano melody, with Rihanna's vocals fading out.
 
-```{r}
+### Umbrella
+
+```{r,fig.width=9, fig.height=6}
 llt <-
   get_tidy_audio_analysis("49FYlytm3dAAraYgpoJZux") |> # Change URI.
   compmus_align(bars, segments) |>                     # Change `bars`
@@ -239,13 +240,13 @@ llt |>
   labs(x = "", y = "")
 ```
 
-###Rude boy
+----------------------------------------------------------------------
 
-Intro (0:00-0:11): The song starts with a drum loop, a synth riff, and Rihanna's vocals. Verse 1 (0:11-0:43): The first verse features Rihanna's vocals over a sparse instrumental accompaniment, building to a pre-chorus. Pre-chorus (0:43-0:59): Starts with a more intense instrumental accompaniment. Chorus 1 (0:59-1:30): The first chorus features a catchy and repetitive melody, with Rihanna's vocals over a layered and upbeat instrumental accompaniment. Verse 2 (1:30-2:03): The second verse is similar to the first verse, but with some variations in the instrumentation and vocal delivery. Pre-chorus (2:03-2:19): The pre-chorus is repeated, leading into the second chorus. Chorus 2 (2:19-2:50): The second chorus is a repeat of the first chorus, but with some variations in the instrumentation and vocal ad-libs. Bridge (2:50-3:12): The bridge provides a contrast to the chorus, with a slower tempo and a different chord progression. Rihanna sings "Come here rude boy, boy, can you get it up? / Come here rude boy, boy, is you big enough? / Take it, take it, baby, baby / Take it, take it, love me, love me." Chorus 3 (3:12-3:43): The third chorus is a repeat of the first two choruses, with additional vocal ad-libs and harmonies. Outro (3:43-3:57): The song ends with a repetition of the chorus and an instrumental fade-out.
+Intro (0:00-0:10): The song begins with a synth chord progression and a simple drum pattern. Verse 1 (0:10-0:43): The first verse features Rihanna's vocals over a sparse instrumental accompaniment, building to a pre-chorus. Pre-chorus (0:43-1:02): The pre-chorus begins with a slightly more intense instrumental accompaniment. Chorus 1 (1:02-1:32): The first chorus features a catchy and repetitive melody, with Rihanna's vocals over a layered and upbeat instrumental accompaniment. Verse 2 (1:32-2:06): The second verse is similar to the first verse, but with slight variations in the instrumentation and vocal delivery. Pre-chorus (2:06-2:25): The pre-chorus is repeated, leading into the second chorus. Chorus 2 (2:25-2:56): The second chorus is a repeat of the first chorus, but with some variations in the instrumentation and vocal ad-libs. Bridge (2:56-3:18): The bridge provides a contrast to the chorus, with a slower tempo and a different chord progression.Chorus 3 (3:18-3:49): The third chorus is a repeat of the first two choruses, with additional vocal ad-libs and harmonies. Outro (3:49-4:13): The song ends with a repetition of the chorus and an instrumental fade-out.
 
-Overall, the song features variations, such as the repetition of the pre-chorus and the vocal ad-libs and harmonies in the choruses. The bridge adds to the dynamic and memorable quality of the song by providing a contrast to the chorus.
+### Rude boy
 
-```{r}
+```{r,fig.width=9, fig.height=6}
 jkt <-
   get_tidy_audio_analysis("60jzFy6Nn4M0iD1d94oteF") |> # Change URI.
   compmus_align(bars, segments) |>                     # Change `bars`
@@ -300,13 +301,16 @@ jkt |>
   labs(x = "", y = "")
 ```
 
-###S&M
+-----------------------------------------------------------------------
 
-Verse 2 (1:33-2:05): The second verse is similar to the first verse, but with some variations in the instrumentation and vocal delivery. Pre-chorus (2:05-2:21): The pre-chorus is repeated, leading into the second chorus. Chorus 2 (2:21-2:51): The second chorus is a repeat of the first chorus, but with some variations in the instrumentation and vocal ad-libs. Bridge (2:51-3:23): The bridge provides a contrast to the chorus, with a slower tempo and a different chord progression. Chorus 3 (3:23-3:53): The third chorus is a repeat of the first two choruses, with additional vocal ad-libs and harmonies. Outro (3:53-4:16): The song ends with a repetition of the chorus and an instrumental fade-out.
 
-Overall, the arrangement of "S&M" follows a standard pop song structure, with an intro, verses, pre-choruses, choruses, and a bridge. The song features variations, such as the repetition of the pre-chorus and the vocal ad-libs and harmonies in the choruses. The bridge adds to the dynamic and memorable quality of the song by providing a contrast to the chorus.
+Intro (0:00-0:11): The song starts with a drum loop, a synth riff, and Rihanna's vocals.Verse 1 (0:11-0:43): The first verse features Rihanna's vocals over a sparse instrumental accompaniment, building to a pre-chorus.Pre-chorus (0:43-0:59): Starts with a more intense instrumental accompaniment.Chorus 1 (0:59-1:30): The first chorus features a catchy and repetitive melody, with Rihanna's vocals over a layered and upbeat instrumental accompaniment. Verse 2 (1:33-2:05): The second verse is similar to the first verse, but with some variations in the instrumentation and vocal delivery. Pre-chorus (2:05-2:21): The pre-chorus is repeated, leading into the second chorus. Chorus 2 (2:21-2:51): The second chorus is a repeat of the first chorus, but with some variations in the instrumentation and vocal. Bridge (2:51-3:23): The bridge provides a contrast to the chorus, with a slower tempo and a different chord progression. Chorus 3 (3:23-3:53): The third chorus is a repeat of the first two choruses, with additional vocal ad-libs and harmonies. Outro (3:53-4:16): The song ends with a repetition of the chorus and an instrumental fade-out.
 
-```{r}
+
+
+### S&M
+
+```{r,fig.width=9, fig.height=6}
 lao <-
   get_tidy_audio_analysis("0C4ejWmOTMv8vuYj85mf8m") |> 
   compmus_align(bars, segments) |>                    
@@ -362,9 +366,14 @@ lao |>
   labs(x = "", y = "")
 ```
 
-##We found love
+------------------------------------------------------------------------
 
-```{r}
+Intro (0:00-0:11): The song starts with a drum loop, a synth riff, and Rihanna's vocals.Verse 1 (0:11-0:43): The first verse features Rihanna's vocals over a sparse instrumental accompaniment, building to a pre-chorus.
+Pre-chorus (0:43-0:59): Starts with a more intense instrumental accompaniment.Chorus 1 (0:59-1:30): The first chorus features a catchy and repetitive melody, with Rihanna's vocals over a layered and upbeat instrumental accompaniment.Verse 2 (1:33-2:05): The second verse is similar to the first verse, but with some variations in the instrumentation and vocal delivery. Pre-chorus (2:05-2:21): The pre-chorus is repeated, leading into the second chorus. Chorus 2 (2:21-2:51): The second chorus is a repeat of the first chorus, but with some variations in the instrumentation and vocal ad-libs. Bridge (2:51-3:23): The bridge provides a contrast to the chorus, with a slower tempo and a different chord progression. Chorus 3 (3:23-3:53): The third chorus is a repeat of the first two choruses, with additional vocal ad-libs and harmonies. Outro (3:53-4:16): The song ends with a repetition of the chorus and an instrumental fade-out.
+
+### We found love
+
+```{r,fig.width=9, fig.height=6}
 bzt<-
   get_tidy_audio_analysis("0U10zFw4GlBacOy9VDGfGL") |> # Change URI.
   compmus_align(bars, segments) |>                     # Change `bars`
@@ -420,13 +429,13 @@ bzt |>
 
 ```
 
-Intro (0:00-0:04): The song starts with a repetitive synth riff and Rihanna's vocals. Verse 1 (0:04-0:35): The first verse features Rihanna's vocals over instrumental accompaniment, building to a pre-chorus. Pre-chorus (0:35-0:49): The pre-chorus is a short section that serves as a transition from the verse to the chorus, with a more intense instrumental accompaniment. Chorus 1 (0:49-1:19): The first chorus features a catchy and repetitive melody, with Rihanna's vocals over a layered and upbeat instrumental accompaniment. Verse 2 (1:19-1:50): The second verse is similar to the first verse, but with some variations in the instrumentation and vocal delivery. Pre-chorus (1:50-2:04): The pre-chorus is repeated, leading into the second chorus. Chorus 2 (2:04-2:34): The second chorus is a repeat of the first chorus, but with some variations in the instrumentation and vocal ad-libs. Bridge (2:34-2:49): The bridge provides a contrast to the chorus, with a slower tempo and a different chord progression. Rihanna sings "Yellow diamonds in the light / And we're standing side by side." Chorus 3 (2:49-3:19): The third chorus is a repeat of the first two choruses, with additional vocal ad-libs and harmonies. Outro (3:19-3:50): The song ends with a repetition of the chorus and an instrumental fade-out.
+-----------------------------------------------------------------------
 
-Overall, the arrangement of "We Found Love" follows a standard pop song structure, with an intro, verses, pre-choruses, choruses, and a bridge. The song features variations, such as the repetition of the pre-chorus and the vocal ad-libs and harmonies in the choruses. The bridge adds to the dynamic and memorable quality of the song by providing a contrast to the chorus.
+Intro (0:00-0:04): The song starts with a repetitive synth riff and Rihanna's vocals. Verse 1 (0:04-0:35): The first verse features Rihanna's vocals over instrumental accompaniment, building to a pre-chorus. Pre-chorus (0:35-0:49): The pre-chorus is a short section that serves as a transition from the verse to the chorus, with a more intense instrumental accompaniment. Chorus 1 (0:49-1:19): The first chorus features a catchy and repetitive melody, with Rihanna's vocals over a layered and upbeat instrumental accompaniment. Verse 2 (1:19-1:50): The second verse is similar to the first verse, but with some variations in the instrumentation and vocal delivery. Pre-chorus (1:50-2:04): The pre-chorus is repeated, leading into the second chorus. Chorus 2 (2:04-2:34): The second chorus is a repeat of the first chorus, but with some variations in the instrumentation and vocal ad-libs. Bridge (2:34-2:49): The bridge provides a contrast to the chorus, with a slower tempo. The third chorus is a repeat of the first two choruses, with additional vocal ad-libs and harmonies. Outro (3:19-3:50): The song ends with a repetition of the chorus and an instrumental fade-out.
 
-##Diamonds
+### Diamonds
 
-```{r}
+```{r,fig.width=9, fig.height=6}
 library(tidyverse)
 library(spotifyr)
 library(compmus)
@@ -485,13 +494,14 @@ bzt |>
   labs(x = "", y = "")
 ```
 
-Intro (0:00-0:07): The song starts with a slow and atmospheric instrumental intro, with a repeating piano melody and Rihanna's vocals. Verse 1 (0:07-0:38): The first verse features Rihanna's vocals over a sparse instrumental accompaniment, building to a pre-chorus. Pre-chorus (0:38-0:52): The pre-chorus is a short section that serves as a transition from the verse to the chorus, with a more intense instrumental accompaniment. Chorus 1 (0:52-1:22): The first chorus features a catchy and repetitive melody, with Rihanna's vocals over a layered and upbeat instrumental accompaniment. Verse 2 (1:22-1:53): The second verse is similar to the first verse, but with some variations in the instrumentation and vocal delivery. Pre-chorus (1:53-2:07): The pre-chorus is repeated, leading into the second chorus. Chorus 2 (2:07-2:38): The second chorus is a repeat of the first chorus, but with some variations in the instrumentation and vocal ad-libs. Bridge (2:38-3:09): The bridge provides a contrast to the chorus, with a slower tempo and a different chord progression. Rihanna sings "So shine bright, tonight you and I / We're beautiful like diamonds in the sky." Chorus 3 (3:09-3:39): The third chorus is a repeat of the first two choruses, with additional vocal ad-libs and harmonies. Outro (3:39-4:22): The song ends with a repetition of the chorus and an instrumental fade-out.
+----------------------------------------------------------------
 
-Overall, the arrangement of "Diamonds" follows a standard pop song structure, with an intro, verses, pre-choruses, choruses, and a bridge. The song features variations, such as the repetition of the pre-chorus and the vocal ad-libs and harmonies in the choruses. The bridge adds to the dynamic and memorable quality of the song by providing a contrast to the chorus.
+Intro (0:00-0:07): The song starts with a slow and atmospheric instrumental intro, with a repeating piano melody and Rihanna's vocals. Verse 1 (0:07-0:38): The first verse features Rihanna's vocals over a sparse instrumental accompaniment, building to a pre-chorus. Pre-chorus (0:38-0:52): The pre-chorus is a short section that serves as a transition. Chorus 1 (0:52-1:22): The first chorus features a catchy and repetitive melody, with Rihanna's vocals over a layered instrumental accompaniment. Verse 2 (1:22-1:53): The second verse is similar to the first verse, but with some variations in the instrumentation and vocal delivery. Pre-chorus (1:53-2:07): The pre-chorus is repeated, leading into the second chorus. Chorus 2 (2:07-2:38): The second chorus is a repeat of the first chorus, but with some variations in the instrumentation and vocal ad-libs. Bridge (2:38-3:09): The bridge provides a contrast to the chorus, with a slower tempo. Chorus 3 (3:09-3:39): The third chorus is a repeat of the first two choruses, with additional vocals and harmonies. Outro (3:39-4:22): The song ends with a repetition of the chorus and an instrumental fade-out.
 
-##Work
 
-```{r}
+### Work
+
+```{r,fig.width=9, fig.height=6}
 bzt<-
   get_tidy_audio_analysis("5gZsEYaYvyi1sAVyuiXbDm") |> # Change URI.
   compmus_align(bars, segments) |>                     # Change `bars`
@@ -546,18 +556,19 @@ bzt |>
   labs(x = "", y = "")
 ```
 
-"Work" by Rihanna is a dancehall and reggae-pop influenced song that follows a non-traditional pop song structure. Here is the arrangement of the song based on the most common sources:
+------------------------------------------------------------------
 
-Intro (0:00-0:13): The song starts with a repeating instrumental riff and Rihanna's vocal ad-libs. Verse 1 (0:13-0:39): The first verse features Rihanna's vocals in Jamaican Patois over a sparse instrumental accompaniment, building to a pre-chorus. Pre-chorus (0:39-0:53): The pre-chorus is a short section that serves as a transition from the verse to the chorus, with a more intense instrumental accompaniment. Chorus 1 (0:53-1:29): The first chorus features Rihanna's vocals over a dancehall-inspired instrumental accompaniment, with a repetitive and catchy melody. Verse 2 (1:29-1:57): The second verse is similar to the first verse, but with some variations in the instrumentation and vocal delivery. Pre-chorus (1:57-2:12): The pre-chorus is repeated, leading into the second chorus. Chorus 2 (2:12-2:49): The second chorus is a repeat of the first chorus, with some variations in the instrumentation and vocal ad-libs. Bridge (2:49-3:04): The bridge is a short section that features a contrasting instrumental accompaniment and Rihanna's vocals in English, singing "You see me I be work, work, work, work, work, work." Chorus 3 (3:04-3:42): The third chorus is a repeat of the first two choruses, with additional vocal ad-libs and harmonies. Outro (3:42-3:59): The song ends with a repetition of the chorus and an instrumental fade-out.
+Intro (0:00-0:13): The song starts with a repeating instrumental riff and Rihanna's vocal ad-libs. Verse 1 (0:13-0:39): The first verse features Rihanna's vocals over an instrumental accompaniment, building to a pre-chorus. Pre-chorus (0:39-0:53): The pre-chorus is a short section that serves as a transition again. Chorus 1 (0:53-1:29): The first chorus features Rihanna's vocals over a dancehall-inspired instrumental accompaniment, with a repetitive and catchy melody. Verse 2 (1:29-1:57): The second verse is similar to the first verse, but with some variations in the instrumentation and vocal delivery. Pre-chorus (1:57-2:12): The pre-chorus is repeated, leading into the second chorus. Chorus 2 (2:12-2:49): The second chorus is a repeat of the first chorus, with some variations in the instrumentation and vocal ad-libs. Bridge (2:49-3:04): The bridge is a short section that features a contrasting instrumental accompaniment.Chorus 3 (3:04-3:42): The third chorus is a repeat of the first two choruses, with additional vocal ad-libs and harmonies. Outro (3:42-3:59): The song ends with a repetition of the chorus and an instrumental fade-out.
 
-Overall, the arrangement of "Work" follows a non-traditional pop song structure, with an intro, verses, pre-choruses, choruses, and a bridge. The song features variations, such as the use of Jamaican Patois in the verses and the dancehall-inspired instrumental accompaniment. The bridge adds to the dynamic and memorable quality of the song by providing a contrast to the chorus.
 
-Chromatograms
+Chromatograms of the most streamed{.storyboard}
 =====================================  
-###Chromatograms of the most streamed songs of Rihanna per album 
+
+----------------------------------------------
+  
+### Pon De Replay 
 
 ```{r}
-
 library(tidyverse)
 library(spotifyr)
 library(compmus)
@@ -583,6 +594,12 @@ wood |>
   theme_minimal() +
   scale_fill_viridis_c()
 
+```
+
+-----------------------------------------------------------------------
+
+### Unfaithful
+```{r}
 library(tidyverse)
 library(spotifyr)
 library(compmus)
@@ -608,8 +625,13 @@ wood |>
   theme_minimal() +
   scale_fill_viridis_c()
 
+```
 
+-----------------------------------------------------------------------
 
+### Umbrella
+
+```{r}
 library(tidyverse)
 library(spotifyr)
 library(compmus)
@@ -634,8 +656,13 @@ wood |>
   labs(x = "Time (s)", y = NULL, fill = "Magnitude",title = "Umbrella") +
   theme_minimal() +
   scale_fill_viridis_c()
-  
 
+```
+
+-----------------------------------------------------------------------
+
+### Rude Boy
+```{r}
 library(tidyverse)
 library(spotifyr)
 library(compmus)
@@ -661,7 +688,13 @@ wood |>
   theme_minimal() +
   scale_fill_viridis_c()
 
+```
 
+-----------------------------------------------------------------------
+
+### S&M
+
+```{r}
 library(tidyverse)
 library(spotifyr)
 library(compmus)
@@ -686,9 +719,14 @@ wood |>
   labs(x = "Time (s)", y = NULL, fill = "Magnitude",title = "S%M") +
   theme_minimal() +
   scale_fill_viridis_c()
-  
-  
 
+```
+
+-----------------------------------------------------------------------
+
+### We found love
+
+```{r}
 library(tidyverse)
 library(spotifyr)
 library(compmus)
@@ -714,14 +752,13 @@ where |>
   labs(x = "Time (s)", y = NULL, fill = "Magnitude",title = "We Found Love") +
   theme_minimal() +
   scale_fill_viridis_c()
-  
-  
-  
+```
 
-library(tidyverse)
-library(spotifyr)
-library(compmus)
+-----------------------------------------------------------------------
 
+### Diamonds
+
+```{r}
 where <-
   get_tidy_audio_analysis (c("5pDUMdIiW0rNLzFryqpC9j")) |>
   select(segments) |>
@@ -743,9 +780,14 @@ where |>
   labs(x = "Time (s)", y = NULL, fill = "Magnitude",title = "Diamonds") +
   theme_minimal() +
   scale_fill_viridis_c()
-  
-  
 
+```
+
+-----------------------------------------------------------------------
+
+### Work
+
+```{r}
 
 library(tidyverse)
 library(spotifyr)
@@ -772,16 +814,20 @@ where |>
   labs(x = "Time (s)", y = NULL, fill = "Magnitude",title = "Work") +
   theme_minimal() +
   scale_fill_viridis_c()
-  
 ```
 
+-----------------------------------------------------------------------
 
 
 
-Pon de replay
-===================================== 
+Chordograms{.storyboard}
+=========================================
 
-```{r}
+-----------------------------------------------------------------------
+
+### Pon de replay
+  
+  ```{r}
 library(tidyverse)
 library(spotifyr)
 library(compmus)
@@ -904,12 +950,11 @@ pondereplay |>
 
 ```
 
------------------------------
+------------------------------------------------------------------------
 
+"Pon de Replay" by Rihanna is a popular dancehall-influenced pop song. The song is primarily in the key of B-flat minor, with a tempo of approximately 100 beats per minute.The chord progression in the song is relatively simple and features a repeating pattern of three chords throughout most of the song. The chords used in "Pon de Replay" are Bb minor, Eb minor, and F# major.
 
-Unfaithful
-===================================== 
-
+### Unfaithful
 
 ```{r}
 library(tidyverse)
@@ -1033,14 +1078,13 @@ unfaith |>
   labs(x = "Time (s)", y = "")
 ```
 
+-----------------------------------------------------------------------
 
+"Unfaithful" by Rihanna is a pop ballad that features a piano-based accompaniment with a simple yet powerful harmonic structure. The song is primarily in the key of C minor, with a tempo of approximately 90 beats per minute.The chord progression in "Unfaithful" is relatively simple, featuring a repeating pattern of four chords throughout the song. The chords used in "Unfaithful" are C minor, Bb major, Ab major, and G major.
 
+### Umbrella
 
-Umbrella
-===================================== 
-
-
-```{r}
+  ```{r}
 
 library(tidyverse)
 library(spotifyr)
@@ -1164,13 +1208,17 @@ umbrella |>
 
 ```
 
+----------------------------------------------------------------------
+
+"Umbrella" by Rihanna is a pop song with R&B and hip-hop influences. The song is primarily in the key of C# minor, with a tempo of approximately 87 beats per minute.The chord progression in "Umbrella" is relatively simple, featuring a repeating pattern of three chords throughout most of the song. The chords used in "Umbrella" are C# minor, B major, and A major.
 
 
-Rude Boy
-===================================== 
 
+### Rude Boy
 
-```{r}
+  
+  
+  ```{r}
 library(tidyverse)
 library(spotifyr)
 library(compmus)
@@ -1292,13 +1340,13 @@ rudeboy |>
   labs(x = "Time (s)", y = "")
 ```
 
+-------------------------------------------------------------------------
 
+"Rude Boy" by Rihanna is a dancehall and reggae-influenced pop song. The song is primarily in the key of B minor, with a tempo of approximately 87 beats per minute.The chord progression in "Rude Boy" is relatively simple, featuring a repeating pattern of four chords throughout most of the song. The chords used in "Rude Boy" are B minor, D major, G major, and A major.  
 
-S&M
-===================================== 
+### S&M
 
-
-```{r}
+ ```{r}
 library(tidyverse)
 library(spotifyr)
 library(compmus)
@@ -1420,14 +1468,17 @@ snm |>
   labs(x = "Time (s)", y = "")
 ```
 
+--------------------------------------------------------------
+
+"S&M" by Rihanna is an electro-pop and dance-pop song with influences from house and techno music. The song is primarily in the key of E-flat major, with a tempo of approximately 128 beats per minute.The chord progression in "S&M" is relatively simple, featuring a repeating pattern of four chords throughout most of the song. The chords used in "S&M" are E-flat major, B-flat major, C minor, and G minor.
 
 
 
-We found love 
-===================================== 
+### We found love 
 
-
-```{r}
+  
+  
+  ```{r}
 library(tidyverse)
 library(spotifyr)
 library(compmus)
@@ -1547,17 +1598,19 @@ wefoundlove |>
   scale_fill_viridis_c(guide = "none") +
   theme_minimal() +
   labs(x = "Time (s)", y = "")
-  
+
 ```
 
+-------------------------------------------------------------------------
 
+ "We Found Love" by Rihanna is an upbeat dance-pop and EDM song with influences from house and techno music. The song is primarily in the key of G major, with a tempo of approximately 128 beats per minute.The chord progression in "We Found Love" is relatively simple, featuring a repeating pattern of four chords throughout most of the song. The chords used in "We Found Love" are G major, D major, Em, and C major.
+ 
 
-Diamonds
-===================================== 
+### Diamonds
 
-
-
-```{r}
+  
+  
+  ```{r}
 library(tidyverse)
 library(spotifyr)
 library(compmus)
@@ -1679,13 +1732,16 @@ diamonds |>
   labs(x = "Time (s)", y = "")
 ```
 
+-------------------------------------------------------------------------
 
-Work
-===================================== 
+"Diamonds" by Rihanna is a mid-tempo pop ballad with a prominent piano riff and a chorus that features electronic beats. The song is primarily in the key of B-flat major, with a tempo of approximately 92 beats per minute.The chord progression in "Diamonds" is relatively simple, featuring a repeating pattern of four chords throughout most of the song. The chords used in "Diamonds" are B-flat major, G minor, E-flat major, and F major.
 
+  
+### Work
 
-
-```{r}
+  
+  
+  ```{r}
 library(tidyverse)
 library(spotifyr)
 library(compmus)
@@ -1807,45 +1863,175 @@ work |>
   labs(x = "Time (s)", y = "")
 ```
 
---------------------------------------
+-----------------------------------------------------------------------
 
 "Work" by Rihanna is a dancehall-inspired pop song with a prominent beat and lyrics. The song is primarily in the key of A minor, with a tempo of approximately 92 beats per minute.The chord progression in "Work" is relatively simple, featuring a repeating pattern of four chords throughout most of the song. The chords used in "Work" are A minor, E minor, D major, and F major.   
 
+  
+  
+
+Fourier-based tempograms{.storyboard}
+=====================================  
+
+----------------------------------------------
 
 
-Information 
-===================================== 
+### Pon de Replay
 
-
-
- 
- The information is presented due to issues with visualization(size), which would hopefully be resolved soon. 
-
-
-
-"Pon de Replay" by Rihanna is a popular dancehall-influenced pop song. The song is primarily in the key of B-flat minor, with a tempo of approximately 100 beats per minute.The chord progression in the song is relatively simple and features a repeating pattern of three chords throughout most of the song. The chords used in "Pon de Replay" are Bb minor, Eb minor, and F# major.
-
-"Unfaithful" by Rihanna is a pop ballad that features a piano-based accompaniment with a simple yet powerful harmonic structure. The song is primarily in the key of C minor, with a tempo of approximately 90 beats per minute.The chord progression in "Unfaithful" is relatively simple, featuring a repeating pattern of four chords throughout the song. The chords used in "Unfaithful" are C minor, Bb major, Ab major, and G major.
-
-
-"Umbrella" by Rihanna is a pop song with R&B and hip-hop influences. The song is primarily in the key of C# minor, with a tempo of approximately 87 beats per minute.The chord progression in "Umbrella" is relatively simple, featuring a repeating pattern of three chords throughout most of the song. The chords used in "Umbrella" are C# minor, B major, and A major.
-
-
-"Rude Boy" by Rihanna is a dancehall and reggae-influenced pop song. The song is primarily in the key of B minor, with a tempo of approximately 87 beats per minute.The chord progression in "Rude Boy" is relatively simple, featuring a repeating pattern of four chords throughout most of the song. The chords used in "Rude Boy" are B minor, D major, G major, and A major.
-
-
-"S&M" by Rihanna is an electro-pop and dance-pop song with influences from house and techno music. The song is primarily in the key of E-flat major, with a tempo of approximately 128 beats per minute.The chord progression in "S&M" is relatively simple, featuring a repeating pattern of four chords throughout most of the song. The chords used in "S&M" are E-flat major, B-flat major, C minor, and G minor.
-
-
-"We Found Love" by Rihanna is an upbeat dance-pop and EDM song with influences from house and techno music. The song is primarily in the key of G major, with a tempo of approximately 128 beats per minute.The chord progression in "We Found Love" is relatively simple, featuring a repeating pattern of four chords throughout most of the song. The chords used in "We Found Love" are G major, D major, Em, and C major.
-
-
-"Diamonds" by Rihanna is a mid-tempo pop ballad with a prominent piano riff and a chorus that features electronic beats. The song is primarily in the key of B-flat major, with a tempo of approximately 92 beats per minute.The chord progression in "Diamonds" is relatively simple, featuring a repeating pattern of four chords throughout most of the song. The chords used in "Diamonds" are B-flat major, G minor, E-flat major, and F major.
-
-
-"Work" by Rihanna is a dancehall-inspired pop song with a prominent beat and lyrics. The song is primarily in the key of A minor, with a tempo of approximately 92 beats per minute.The chord progression in "Work" is relatively simple, featuring a repeating pattern of four chords throughout most of the song. The chords used in "Work" are A minor, E minor, D major, and F major.   
-### Chart 1
-    
 ```{r}
+
+pondrpl <- get_tidy_audio_analysis("4TsmezEQVSZNNPv5RJ65Ov")
+
+pondrpl |>
+  tempogram(window_size = 8, hop_size = 1, cyclic = TRUE) |>
+  ggplot(aes(x = time, y = bpm, fill = power)) +
+  geom_raster() +
+  scale_fill_viridis_c(guide = "none") +
+  labs(x = "Time (s)", y = "Tempo (BPM)") +
+  theme_classic()
 ```
-   
+
+--------------------------------------------------------------
+
+"Pon de Replay" by Rihanna has a specific tempo of around  99/100  beats per minute (BPM). The  tempo falls within the range of what is considered a mid-tempo song, which can be described as having a moderate pace that is neither too fast nor too slow. The steady beat of 99 BPM in "Pon de Replay" gives the song a catchy and danceable feel, which possibly helped make it a hit when it was released in 2005
+
+### Unfaithful 
+
+```{r}
+unfaith <- get_tidy_audio_analysis("1oh6hjPd82XlGFQGUh2Jfa")
+
+unfaith |>
+  tempogram(window_size = 8, hop_size = 1, cyclic = TRUE) |>
+  ggplot(aes(x = time, y = bpm, fill = power)) +
+  geom_raster() +
+  scale_fill_viridis_c(guide = "none") +
+  labs(x = "Time (s)", y = "Tempo (BPM)") +
+  theme_classic()
+```
+
+--------------------------------------------------------------
+
+"Unfaithful" by Rihanna has a tempo of 90 beats per minute (BPM). This tempo also falls within the range of what is typically considered a mid-tempo song, which can be described as having a moderate pace that is again neither too fast nor too slow. The tempo of 90 BPM in "Unfaithful"  however is  slower than the tempo of Rihanna's earlier hit "Pon de Replay", which has a tempo of 99 BPM. The slower tempo of "Unfaithful" gives the song a more contemplative and melancholy feel, which suits the song's subject matter of a troubled relationship..
+
+### Umbrella
+
+```{r}
+umbr <- get_tidy_audio_analysis("49FYlytm3dAAraYgpoJZux")
+
+umbr |>
+  tempogram(window_size = 8, hop_size = 1, cyclic = TRUE) |>
+  ggplot(aes(x = time, y = bpm, fill = power)) +
+  geom_raster() +
+  scale_fill_viridis_c(guide = "none") +
+  labs(x = "Time (s)", y = "Tempo (BPM)") +
+  theme_classic()
+```
+
+--------------------------------------------------------------
+
+"Umbrella" by Rihanna has a tempo of 87 beats per minute (BPM). This tempo falls within the range of what is again  typically considered a mid-tempo song. The tempo of 87 BPM in "Umbrella" is slower than the tempo of Rihanna's earlier hit "Pon de Replay" (99 BPM) but slightly faster than the tempo of "Unfaithful" (90 BPM).
+The steady beat of 87 BPM in "Umbrella" gives the song a relaxed and catchy feel, which made it a hit when it was released in 2007. Additionally, the use of a simple but memorable drum pattern and bassline throughout the song, combined with Rihanna's vocal performance, contributed  to the song's overall rhythmic groove.
+
+
+### Rude Boy
+
+```{r}
+
+rud <- get_tidy_audio_analysis("60jzFy6Nn4M0iD1d94oteF")
+
+rud |>
+  tempogram(window_size = 8, hop_size = 1, cyclic = TRUE) |>
+  ggplot(aes(x = time, y = bpm, fill = power)) +
+  geom_raster() +
+  scale_fill_viridis_c(guide = "none") +
+  labs(x = "Time (s)", y = "Tempo (BPM)") +
+  theme_classic()
+```
+
+--------------------------------------------------------------
+
+"Rude Boy" by Rihanna has a specific tempo of 87  beats per minute (BPM). This tempo falls again within  the range of what is typically considered a mid-tempo song. The tempo of 87 BPM in "Rude Boy" is the same as the tempo of Rihanna's hit "Umbrella" and is slightly slower than the tempo of her earlier hit "Pon de Replay" (99 BPM).The steady beat of 87 BPM in "Rude Boy" gives the song a danceable and infectious feel, which  made it a hit when it was released in 2010. The song features a syncopated rhythm and a catchy melody, with Rihanna's vocal performance emphasizing the song's upbeat and playful nature. The tempo of "Rude Boy" contributes to its overall energy and groove, making it a popular dance track.
+
+### S&M
+
+```{r}
+snm <- get_tidy_audio_analysis("7ySUcLPVX7KudhnmNcgY2D")
+
+snm |>
+  tempogram(window_size = 8, hop_size = 1, cyclic = TRUE) |>
+  ggplot(aes(x = time, y = bpm, fill = power)) +
+  geom_raster() +
+  scale_fill_viridis_c(guide = "none") +
+  labs(x = "Time (s)", y = "Tempo (BPM)") +
+  theme_classic()
+```
+
+----------------------------------------------------------------
+ 
+"S&M" by Rihanna has a unique  tempo of 129 beats per minute (BPM), considering the previous tracks. This tempo can be considered as a  fast-paced song, which can be described as having a quick pace that is energetic and upbeat. The tempo of 129 BPM in "S&M" is notably faster than the tempos of Rihanna's earlier hits "Unfaithful" (90 BPM) and "Umbrella" (87 BPM), and also faster than her mid-tempo hit "Rude Boy" (87 BPM). The fast tempo of "S&M" gives the song a frenetic and exciting feel, which helps to emphasize the song's provocative lyrics and playful tone. The song features a strong beat, with a driving bassline and percussion elements that add to its overall energy. The song also features the use of electronic and synthesizer elements which contribute to its overall sound and production. 
+
+### We found love
+
+
+```{r}
+
+wefound <- get_tidy_audio_analysis("0U10zFw4GlBacOy9VDGfGL")
+
+wefound |>
+  tempogram(window_size = 8, hop_size = 1, cyclic = TRUE) |>
+  ggplot(aes(x = time, y = bpm, fill = power)) +
+  geom_raster() +
+  scale_fill_viridis_c(guide = "none") +
+  labs(x = "Time (s)", y = "Tempo (BPM)") +
+  theme_classic()
+```
+
+------------------------------------------------------------
+
+"We Found Love" by Rihanna has a specific tempo of 128 beats per minute (BPM). This tempo also  falls within the range of what is typically considered a fast-paced song. The tempo of 128 BPM in "We Found Love" is similar to the tempo of Rihanna's hit "S&M" (129 BPM). The fast tempo of "We Found Love"  gives the song a pulsing and driving feel, which helps to emphasize the song's theme of an intense and passionate love affair. The song features a strong beat, with electronic and synthesizer elements that create a danceable and hypnotic sound. The tempo, combined with the song's memorable melody and Rihanna's emotive vocal performance, helped make "We Found Love" a hit when it was released in 2011. The song's tempo also is very  popular in dance clubs and on dance music charts, EDM  is typically featured.
+
+
+### Diamonds 
+
+```{r}
+diam <- get_tidy_audio_analysis("5pDUMdIiW0rNLzFryqpC9j")
+
+diam |>
+  tempogram(window_size = 8, hop_size = 1, cyclic = TRUE) |>
+  ggplot(aes(x = time, y = bpm, fill = power)) +
+  geom_raster() +
+  scale_fill_viridis_c(guide = "none") +
+  labs(x = "Time (s)", y = "Tempo (BPM)") +
+  theme_classic()
+
+```
+
+--------------------------------------------------------------------
+
+"Diamonds" by Rihanna has a tempo of 92 beats per minute (BPM). This tempo falls again within the range of mid-tempo song, which can be described. The tempo of 92 BPM in "Diamonds" is similar to the tempo of Rihanna's earlier hit "Unfaithful" (90 BPM).The moderate tempo of "Diamonds" gives the song a dreamy and contemplative feel, which emphasizes the song's theme of finding hope and strength in difficult times. The song features a pulsing beat, with electronic and percussion elements that add to its overall energy. Additionally, the song's memorable melody and Rihanna's emotive vocal performance contribute to its overall impact as a powerful and emotional ballad. 
+
+
+### Work 
+
+```{r}
+library(tidyverse)
+library(spotifyr)
+library(compmus)
+
+
+
+work <- get_tidy_audio_analysis("5gZsEYaYvyi1sAVyuiXbDm")
+
+work |>
+  tempogram(window_size = 8, hop_size = 1, cyclic = TRUE) |>
+  ggplot(aes(x = time, y = bpm, fill = power)) +
+  geom_raster() +
+  scale_fill_viridis_c(guide = "none") +
+  labs(x = "Time (s)", y = "Tempo (BPM)") +
+  theme_classic()
+```
+
+-----------------------------------------------------------------------
+
+"Work" by Rihanna has a specific tempo of 92 beats per minute (BPM). This tempo falls again  within the range of what is typically considered a mid-tempo song. The tempo of 92 BPM in "Work" is the same as the tempo of Rihanna's earlier hit "Diamonds".The steady beat of 92 BPM in "Work" gives the song a danceable feel. The song features a repetitive, syncopated rhythm and a catchy melody, with Rihanna's vocal performance emphasizing the song's upbeat and playful nature. Additionally, the song features elements of Caribbean music, including dancehall and reggae, which contribute to its overall sound and production.
+
